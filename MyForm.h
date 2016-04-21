@@ -1,5 +1,6 @@
 #pragma once
 #include <msclr\marshal_cppstd.h>
+#include "DnDUtils.h"
 
 
 namespace DnDGUI {
@@ -2125,6 +2126,9 @@ namespace DnDGUI {
 	private: System::Void textBox1_TextChanged(System::Object^  sender, System::EventArgs^  e) {
 	}
 	private: System::Void classDropDown_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e) {
+		std::string classinput = context.marshal_as<std::string>(classDropDown->Text);
+		std::string classoutput = classs(classinput);
+		definitionTextBox->Text = context.marshal_as<System::String ^>(classoutput);
 	}
 	private: System::Void raceDropDown_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e) {
 	}
