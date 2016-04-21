@@ -1,4 +1,6 @@
 #pragma once
+#include <msclr\marshal_cppstd.h>
+
 
 namespace DnDGUI {
 
@@ -14,6 +16,7 @@ namespace DnDGUI {
 	/// </summary>
 	public ref class MyForm : public System::Windows::Forms::Form
 	{
+		msclr::interop::marshal_context context;
 	public:
 		MyForm(void)
 		{
@@ -81,6 +84,8 @@ namespace DnDGUI {
 
 
 	public: System::Windows::Forms::Label^  speedBox;
+	private: System::Windows::Forms::ComboBox^  wisDropDown;
+	public:
 
 
 
@@ -109,17 +114,23 @@ namespace DnDGUI {
 
 
 
-	private: System::Windows::Forms::ComboBox^  wisdomDropDown;
-	private: System::Windows::Forms::ComboBox^  intelligenceDropDown;
-	private: System::Windows::Forms::ComboBox^  dexterityDropDown;
-	private: System::Windows::Forms::ComboBox^  constitutionDropDown;
+
+	private: System::Windows::Forms::ComboBox^  intelDropDown;
+
+	private: System::Windows::Forms::ComboBox^  dexDropDown;
+
+	private: System::Windows::Forms::ComboBox^  constDropDown;
+
 	private: System::Windows::Forms::Label^  label9;
 	private: System::Windows::Forms::Label^  label8;
-	private: System::Windows::Forms::ComboBox^  strengthDropDown;
+	private: System::Windows::Forms::ComboBox^  strDropDown;
+
 	private: System::Windows::Forms::Label^  label7;
 	private: System::Windows::Forms::Label^  label6;
 	private: System::Windows::Forms::Label^  label5;
-	private: System::Windows::Forms::ComboBox^  charismaDropDown;
+	private: System::Windows::Forms::ComboBox^  charDropDown;
+
+
 	private: System::Windows::Forms::Label^  label10;
 	private: System::Windows::Forms::Label^  label11;
 
@@ -127,69 +138,80 @@ namespace DnDGUI {
 	public: System::Windows::Forms::Label^  label12;
 
 	public: System::Windows::Forms::Label^  label13;
+	private: System::Windows::Forms::TextBox^  strBonusBox;
+	private: System::Windows::Forms::TextBox^  charBonusBox;
+	public:
+
+	public:
+
+	public:
 
 
 
 
 
-	private: System::Windows::Forms::TextBox^  textBox7;
-	private: System::Windows::Forms::TextBox^  textBox12;
-	private: System::Windows::Forms::TextBox^  textBox11;
-	private: System::Windows::Forms::TextBox^  textBox10;
-	private: System::Windows::Forms::TextBox^  textBox9;
-	private: System::Windows::Forms::TextBox^  textBox8;
+
+
+	private: System::Windows::Forms::TextBox^  wisBonusBox;
+
+	private: System::Windows::Forms::TextBox^  intelBonusBox;
+
+	private: System::Windows::Forms::TextBox^  dexBonusBox;
+
+	private: System::Windows::Forms::TextBox^  constBonusBox;
 
 
 
 
 
-	private: System::Windows::Forms::TextBox^  textBox13;
-	private: System::Windows::Forms::Label^  label14;
+
+
+
 	private: System::Windows::Forms::TabPage^  skillsPage;
 	private: System::Windows::Forms::TextBox^  thieveryMiscTextBox;
 
 
 
-private: System::Windows::Forms::TextBox^  streetwiseMiscTextBox;
+	private: System::Windows::Forms::TextBox^  streetwiseMiscTextBox;
 
 
 
 	private: System::Windows::Forms::Label^  label32;
 	private: System::Windows::Forms::Label^  label33;
-private: System::Windows::Forms::TextBox^  stealthMiscTextBox;
+	private: System::Windows::Forms::TextBox^  stealthMiscTextBox;
 
 
 
-private: System::Windows::Forms::TextBox^  religionMiscTextBox;
+	private: System::Windows::Forms::TextBox^  religionMiscTextBox;
 
 
 
 	private: System::Windows::Forms::Label^  label30;
 	private: System::Windows::Forms::Label^  label31;
-private: System::Windows::Forms::TextBox^  perceptionMiscTextBox;
+	private: System::Windows::Forms::TextBox^  perceptionMiscTextBox;
 
 
 
-private: System::Windows::Forms::TextBox^  natureMiscTextBox;
+	private: System::Windows::Forms::TextBox^  natureMiscTextBox;
 
 
 
 	private: System::Windows::Forms::Label^  label28;
 	private: System::Windows::Forms::Label^  label29;
-private: System::Windows::Forms::TextBox^  intimidateMiscTextBox;
+	private: System::Windows::Forms::TextBox^  intimidateMiscTextBox;
 
 
 
 
 
 
-private: System::Windows::Forms::TextBox^  insightMiscTextBox;
+	private: System::Windows::Forms::TextBox^  insightMiscTextBox;
 
-private: System::Windows::Forms::TextBox^  historyMiscTextBox;
+	private: System::Windows::Forms::TextBox^  historyMiscTextBox;
 
-private: System::Windows::Forms::TextBox^  healMiscTextBox;
+	private: System::Windows::Forms::TextBox^  healMiscTextBox;
 
-private: System::Windows::Forms::TextBox^  enduranceMiscTextBox;
+	private: System::Windows::Forms::TextBox^  enduranceMiscTextBox;
 
 
 
@@ -201,24 +223,24 @@ private: System::Windows::Forms::TextBox^  enduranceMiscTextBox;
 	private: System::Windows::Forms::Label^  label25;
 	private: System::Windows::Forms::Label^  label26;
 	private: System::Windows::Forms::Label^  label27;
-private: System::Windows::Forms::TextBox^  dungeoneeringMiscTextBox;
+	private: System::Windows::Forms::TextBox^  dungeoneeringMiscTextBox;
 
 
 
 
 
 
-private: System::Windows::Forms::TextBox^  diplomacyMiscTextBox;
+	private: System::Windows::Forms::TextBox^  diplomacyMiscTextBox;
 
-private: System::Windows::Forms::TextBox^  bluffMiscTextBox;
+	private: System::Windows::Forms::TextBox^  bluffMiscTextBox;
 
-private: System::Windows::Forms::TextBox^  athleticsMiscTextBox;
+	private: System::Windows::Forms::TextBox^  athleticsMiscTextBox;
 
-private: System::Windows::Forms::TextBox^  arcanaMiscTextBox;
+	private: System::Windows::Forms::TextBox^  arcanaMiscTextBox;
 
-private: System::Windows::Forms::TextBox^  acrobaticsMiscTextBox;
+	private: System::Windows::Forms::TextBox^  acrobaticsMiscTextBox;
 
-	private: System::Windows::Forms::TextBox^  textBox30;
+
 
 
 
@@ -232,75 +254,123 @@ private: System::Windows::Forms::TextBox^  acrobaticsMiscTextBox;
 
 
 	private: System::Windows::Forms::Label^  label18;
-private: System::Windows::Forms::Label^  modifierhalfmod;
+
 
 	private: System::Windows::Forms::Label^  label20;
 	private: System::Windows::Forms::Label^  label22;
-private: System::Windows::Forms::Label^  label34;
-private: System::Windows::Forms::Label^  label21;
+	private: System::Windows::Forms::Label^  label34;
+	private: System::Windows::Forms::Label^  label21;
 
 
 
 
-private: System::Windows::Forms::CheckBox^  checkBox16;
-private: System::Windows::Forms::CheckBox^  checkBox15;
-private: System::Windows::Forms::CheckBox^  checkBox14;
-private: System::Windows::Forms::CheckBox^  checkBox13;
-private: System::Windows::Forms::CheckBox^  checkBox12;
-private: System::Windows::Forms::CheckBox^  checkBox11;
-private: System::Windows::Forms::CheckBox^  checkBox10;
-private: System::Windows::Forms::CheckBox^  checkBox9;
-private: System::Windows::Forms::CheckBox^  checkBox8;
-private: System::Windows::Forms::CheckBox^  checkBox7;
-private: System::Windows::Forms::CheckBox^  checkBox6;
-private: System::Windows::Forms::CheckBox^  checkBox5;
-private: System::Windows::Forms::CheckBox^  checkBox4;
-private: System::Windows::Forms::CheckBox^  checkBox3;
-private: System::Windows::Forms::CheckBox^  checkBox2;
-private: System::Windows::Forms::CheckBox^  checkBox1;
-private: System::Windows::Forms::CheckBox^  checkBox17;
-private: System::Windows::Forms::Label^  label37;
-private: System::Windows::Forms::Label^  label36;
-private: System::Windows::Forms::TabPage^  featsPage;
-public: System::Windows::Forms::PictureBox^  pictureBox;
-private:
-public: System::Windows::Forms::RichTextBox^  definitionTextBox;
-public: System::Windows::Forms::Label^  label38;
+	private: System::Windows::Forms::CheckBox^  checkBox16;
+	private: System::Windows::Forms::CheckBox^  checkBox15;
+	private: System::Windows::Forms::CheckBox^  checkBox14;
+	private: System::Windows::Forms::CheckBox^  checkBox13;
+	private: System::Windows::Forms::CheckBox^  checkBox12;
+	private: System::Windows::Forms::CheckBox^  checkBox11;
+	private: System::Windows::Forms::CheckBox^  checkBox10;
+	private: System::Windows::Forms::CheckBox^  checkBox9;
+	private: System::Windows::Forms::CheckBox^  checkBox8;
+	private: System::Windows::Forms::CheckBox^  checkBox7;
+	private: System::Windows::Forms::CheckBox^  checkBox6;
+	private: System::Windows::Forms::CheckBox^  checkBox5;
+	private: System::Windows::Forms::CheckBox^  checkBox4;
+	private: System::Windows::Forms::CheckBox^  checkBox3;
+	private: System::Windows::Forms::CheckBox^  checkBox2;
+	private: System::Windows::Forms::CheckBox^  checkBox1;
+	private: System::Windows::Forms::CheckBox^  checkBox17;
+	private: System::Windows::Forms::Label^  label37;
+	private: System::Windows::Forms::Label^  label36;
+	private: System::Windows::Forms::TabPage^  featsPage;
+	public: System::Windows::Forms::PictureBox^  pictureBox;
+	private:
+	public: System::Windows::Forms::RichTextBox^  definitionTextBox;
+	public: System::Windows::Forms::Label^  label38;
 
 
 
 
 
-private: System::Windows::Forms::TextBox^  thieveryTextBox;
-private: System::Windows::Forms::TextBox^  streetwiseTextBox;
-private: System::Windows::Forms::TextBox^  stealthTextBox;
-private: System::Windows::Forms::TextBox^  religionTextBox;
-private: System::Windows::Forms::TextBox^  perceptionTextBox;
-private: System::Windows::Forms::TextBox^  natureTextBox;
-private: System::Windows::Forms::TextBox^  intimidateTextBox;
-private: System::Windows::Forms::TextBox^  insightTextBox;
-private: System::Windows::Forms::TextBox^  historyTextBox;
-private: System::Windows::Forms::TextBox^  healTextBox;
-private: System::Windows::Forms::TextBox^  enduranceTextBox;
-private: System::Windows::Forms::TextBox^  dungeoneeringTextBox;
-private: System::Windows::Forms::TextBox^  diplomacyTextBox;
-private: System::Windows::Forms::TextBox^  bluffTextBox;
-private: System::Windows::Forms::TextBox^  athleticsTextBox;
-private: System::Windows::Forms::TextBox^  arcanaTextBox;
-private: System::Windows::Forms::TextBox^  acrobaticsTextBox;
-private: System::Windows::Forms::MenuStrip^  menuStrip1;
-private: System::Windows::Forms::ToolStripMenuItem^  toolStripMenuItem1;
-private: System::Windows::Forms::ToolStripMenuItem^  openToolStripMenuItem;
-private: System::Windows::Forms::ToolStripMenuItem^  saveToolStripMenuItem;
-private: System::Windows::Forms::ToolStripMenuItem^  exitToolStripMenuItem;
-public: System::Windows::Forms::TextBox^  textBox2;
-public: System::Windows::Forms::ComboBox^  comboBox1;
-public: System::Windows::Forms::TextBox^  textBox3;
-private: System::Windows::Forms::RichTextBox^  skillsInfoBox;
-public: System::Windows::Forms::TextBox^  textBox4;
-private:
-public:
-private:
+	private: System::Windows::Forms::TextBox^  thieveryTextBox;
+	private: System::Windows::Forms::TextBox^  streetwiseTextBox;
+	private: System::Windows::Forms::TextBox^  stealthTextBox;
+	private: System::Windows::Forms::TextBox^  religionTextBox;
+	private: System::Windows::Forms::TextBox^  perceptionTextBox;
+	private: System::Windows::Forms::TextBox^  natureTextBox;
+	private: System::Windows::Forms::TextBox^  intimidateTextBox;
+	private: System::Windows::Forms::TextBox^  insightTextBox;
+	private: System::Windows::Forms::TextBox^  historyTextBox;
+	private: System::Windows::Forms::TextBox^  healTextBox;
+	private: System::Windows::Forms::TextBox^  enduranceTextBox;
+	private: System::Windows::Forms::TextBox^  dungeoneeringTextBox;
+	private: System::Windows::Forms::TextBox^  diplomacyTextBox;
+	private: System::Windows::Forms::TextBox^  bluffTextBox;
+	private: System::Windows::Forms::TextBox^  athleticsTextBox;
+	private: System::Windows::Forms::TextBox^  arcanaTextBox;
+	private: System::Windows::Forms::TextBox^  acrobaticsTextBox;
+	private: System::Windows::Forms::MenuStrip^  menuStrip1;
+	private: System::Windows::Forms::ToolStripMenuItem^  toolStripMenuItem1;
+	private: System::Windows::Forms::ToolStripMenuItem^  openToolStripMenuItem;
+	private: System::Windows::Forms::ToolStripMenuItem^  saveToolStripMenuItem;
+	private: System::Windows::Forms::ToolStripMenuItem^  exitToolStripMenuItem;
+	public: System::Windows::Forms::TextBox^  textBox2;
+	public: System::Windows::Forms::ComboBox^  comboBox1;
+	public: System::Windows::Forms::TextBox^  textBox3;
+	private: System::Windows::Forms::RichTextBox^  skillsInfoBox;
+	public: System::Windows::Forms::TextBox^  textBox4;
+	public: System::Windows::Forms::ComboBox^  featsDropDown;
+	private: System::Windows::Forms::Button^  statsRandomButton;
+	public:
+	private: System::Windows::Forms::RichTextBox^  richTextBox1;
+	private: System::Windows::Forms::Label^  featsLabel;
+	private: System::Windows::Forms::TextBox^  charFinalBox;
+	private: System::Windows::Forms::TextBox^  charModBox;
+
+
+
+	private: System::Windows::Forms::TextBox^  wisFinalBox;
+	private: System::Windows::Forms::TextBox^  wisModBox;
+
+
+
+	private: System::Windows::Forms::TextBox^  intelFinalBox;
+	private: System::Windows::Forms::TextBox^  intelModBox;
+
+
+
+
+	private: System::Windows::Forms::TextBox^  dexFinalBox;
+	private: System::Windows::Forms::TextBox^  dexModBox;
+
+
+
+	private: System::Windows::Forms::TextBox^  constFinalBox;
+	private: System::Windows::Forms::TextBox^  constModBox;
+
+
+
+
+	private: System::Windows::Forms::TextBox^  strFinalBox;
+
+	private: System::Windows::Forms::TextBox^  strModBox;
+
+
+
+
+
+
+	private: System::Windows::Forms::Label^  label14;
+	private: System::Windows::Forms::Label^  label19;
+	private: System::Windows::Forms::Button^  calculateButton;
+	private: System::Windows::Forms::TabPage^  powersTab;
+	private: System::Windows::Forms::Label^  label35;
+	private: System::Windows::Forms::Label^  label4;
+
+	private:
+	public:
+	private:
 
 
 
@@ -327,6 +397,7 @@ private:
 			this->definitionTextBox = (gcnew System::Windows::Forms::RichTextBox());
 			this->comboBox4 = (gcnew System::Windows::Forms::ComboBox());
 			this->comboBox3 = (gcnew System::Windows::Forms::ComboBox());
+			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
 			this->comboBox2 = (gcnew System::Windows::Forms::ComboBox());
 			this->classDropDown = (gcnew System::Windows::Forms::ComboBox());
 			this->raceDropDown = (gcnew System::Windows::Forms::ComboBox());
@@ -335,7 +406,10 @@ private:
 			this->label12 = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
+			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
+			this->textBox4 = (gcnew System::Windows::Forms::TextBox());
 			this->speedTextBox = (gcnew System::Windows::Forms::TextBox());
+			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
 			this->ageTextBox = (gcnew System::Windows::Forms::TextBox());
 			this->nameTextBox = (gcnew System::Windows::Forms::TextBox());
 			this->label38 = (gcnew System::Windows::Forms::Label());
@@ -349,28 +423,43 @@ private:
 			this->sizeBox = (gcnew System::Windows::Forms::Label());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->statsPage = (gcnew System::Windows::Forms::TabPage());
-			this->textBox12 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox11 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox10 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox9 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox8 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox13 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox7 = (gcnew System::Windows::Forms::TextBox());
-			this->charismaDropDown = (gcnew System::Windows::Forms::ComboBox());
-			this->wisdomDropDown = (gcnew System::Windows::Forms::ComboBox());
-			this->intelligenceDropDown = (gcnew System::Windows::Forms::ComboBox());
-			this->dexterityDropDown = (gcnew System::Windows::Forms::ComboBox());
-			this->constitutionDropDown = (gcnew System::Windows::Forms::ComboBox());
+			this->calculateButton = (gcnew System::Windows::Forms::Button());
+			this->statsRandomButton = (gcnew System::Windows::Forms::Button());
+			this->charFinalBox = (gcnew System::Windows::Forms::TextBox());
+			this->charModBox = (gcnew System::Windows::Forms::TextBox());
+			this->charBonusBox = (gcnew System::Windows::Forms::TextBox());
+			this->wisFinalBox = (gcnew System::Windows::Forms::TextBox());
+			this->wisModBox = (gcnew System::Windows::Forms::TextBox());
+			this->wisBonusBox = (gcnew System::Windows::Forms::TextBox());
+			this->intelFinalBox = (gcnew System::Windows::Forms::TextBox());
+			this->intelModBox = (gcnew System::Windows::Forms::TextBox());
+			this->intelBonusBox = (gcnew System::Windows::Forms::TextBox());
+			this->dexFinalBox = (gcnew System::Windows::Forms::TextBox());
+			this->dexModBox = (gcnew System::Windows::Forms::TextBox());
+			this->dexBonusBox = (gcnew System::Windows::Forms::TextBox());
+			this->constFinalBox = (gcnew System::Windows::Forms::TextBox());
+			this->constModBox = (gcnew System::Windows::Forms::TextBox());
+			this->constBonusBox = (gcnew System::Windows::Forms::TextBox());
+			this->strFinalBox = (gcnew System::Windows::Forms::TextBox());
+			this->strModBox = (gcnew System::Windows::Forms::TextBox());
+			this->strBonusBox = (gcnew System::Windows::Forms::TextBox());
+			this->charDropDown = (gcnew System::Windows::Forms::ComboBox());
+			this->wisDropDown = (gcnew System::Windows::Forms::ComboBox());
+			this->intelDropDown = (gcnew System::Windows::Forms::ComboBox());
+			this->dexDropDown = (gcnew System::Windows::Forms::ComboBox());
+			this->constDropDown = (gcnew System::Windows::Forms::ComboBox());
 			this->label10 = (gcnew System::Windows::Forms::Label());
 			this->label9 = (gcnew System::Windows::Forms::Label());
 			this->label8 = (gcnew System::Windows::Forms::Label());
-			this->strengthDropDown = (gcnew System::Windows::Forms::ComboBox());
+			this->strDropDown = (gcnew System::Windows::Forms::ComboBox());
 			this->label7 = (gcnew System::Windows::Forms::Label());
 			this->label14 = (gcnew System::Windows::Forms::Label());
+			this->label19 = (gcnew System::Windows::Forms::Label());
 			this->label6 = (gcnew System::Windows::Forms::Label());
 			this->label11 = (gcnew System::Windows::Forms::Label());
 			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->skillsPage = (gcnew System::Windows::Forms::TabPage());
+			this->skillsInfoBox = (gcnew System::Windows::Forms::RichTextBox());
 			this->checkBox17 = (gcnew System::Windows::Forms::CheckBox());
 			this->checkBox16 = (gcnew System::Windows::Forms::CheckBox());
 			this->checkBox15 = (gcnew System::Windows::Forms::CheckBox());
@@ -437,30 +526,31 @@ private:
 			this->arcanaTextBox = (gcnew System::Windows::Forms::TextBox());
 			this->acrobaticsTextBox = (gcnew System::Windows::Forms::TextBox());
 			this->acrobaticsMiscTextBox = (gcnew System::Windows::Forms::TextBox());
-			this->textBox30 = (gcnew System::Windows::Forms::TextBox());
 			this->label15 = (gcnew System::Windows::Forms::Label());
 			this->label16 = (gcnew System::Windows::Forms::Label());
 			this->label17 = (gcnew System::Windows::Forms::Label());
 			this->label18 = (gcnew System::Windows::Forms::Label());
-			this->modifierhalfmod = (gcnew System::Windows::Forms::Label());
 			this->label20 = (gcnew System::Windows::Forms::Label());
 			this->label22 = (gcnew System::Windows::Forms::Label());
 			this->featsPage = (gcnew System::Windows::Forms::TabPage());
+			this->richTextBox1 = (gcnew System::Windows::Forms::RichTextBox());
+			this->featsLabel = (gcnew System::Windows::Forms::Label());
+			this->featsDropDown = (gcnew System::Windows::Forms::ComboBox());
+			this->powersTab = (gcnew System::Windows::Forms::TabPage());
+			this->label35 = (gcnew System::Windows::Forms::Label());
+			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->menuStrip1 = (gcnew System::Windows::Forms::MenuStrip());
 			this->toolStripMenuItem1 = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->openToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->saveToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->exitToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
-			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
-			this->skillsInfoBox = (gcnew System::Windows::Forms::RichTextBox());
-			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox4 = (gcnew System::Windows::Forms::TextBox());
 			this->tabControl1->SuspendLayout();
 			this->generalPage->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox))->BeginInit();
 			this->statsPage->SuspendLayout();
 			this->skillsPage->SuspendLayout();
+			this->featsPage->SuspendLayout();
+			this->powersTab->SuspendLayout();
 			this->menuStrip1->SuspendLayout();
 			this->SuspendLayout();
 			// 
@@ -470,6 +560,7 @@ private:
 			this->tabControl1->Controls->Add(this->statsPage);
 			this->tabControl1->Controls->Add(this->skillsPage);
 			this->tabControl1->Controls->Add(this->featsPage);
+			this->tabControl1->Controls->Add(this->powersTab);
 			this->tabControl1->Location = System::Drawing::Point(1, 27);
 			this->tabControl1->Name = L"tabControl1";
 			this->tabControl1->SelectedIndex = 0;
@@ -562,6 +653,17 @@ private:
 			this->comboBox3->Size = System::Drawing::Size(121, 21);
 			this->comboBox3->TabIndex = 3;
 			this->comboBox3->SelectedIndexChanged += gcnew System::EventHandler(this, &MyForm::classDropDown_SelectedIndexChanged);
+			// 
+			// comboBox1
+			// 
+			this->comboBox1->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
+			this->comboBox1->FormattingEnabled = true;
+			this->comboBox1->Items->AddRange(gcnew cli::array< System::Object^  >(2) { L"Male", L"Female" });
+			this->comboBox1->Location = System::Drawing::Point(13, 222);
+			this->comboBox1->Name = L"comboBox1";
+			this->comboBox1->Size = System::Drawing::Size(121, 21);
+			this->comboBox1->TabIndex = 3;
+			this->comboBox1->SelectedIndexChanged += gcnew System::EventHandler(this, &MyForm::classDropDown_SelectedIndexChanged);
 			// 
 			// comboBox2
 			// 
@@ -656,6 +758,23 @@ private:
 			this->textBox1->TabIndex = 1;
 			this->textBox1->TextChanged += gcnew System::EventHandler(this, &MyForm::textBox1_TextChanged);
 			// 
+			// textBox3
+			// 
+			this->textBox3->Location = System::Drawing::Point(179, 23);
+			this->textBox3->Name = L"textBox3";
+			this->textBox3->ReadOnly = true;
+			this->textBox3->Size = System::Drawing::Size(57, 20);
+			this->textBox3->TabIndex = 1;
+			this->textBox3->TextChanged += gcnew System::EventHandler(this, &MyForm::textBox1_TextChanged);
+			// 
+			// textBox4
+			// 
+			this->textBox4->Location = System::Drawing::Point(252, 24);
+			this->textBox4->Name = L"textBox4";
+			this->textBox4->Size = System::Drawing::Size(57, 20);
+			this->textBox4->TabIndex = 1;
+			this->textBox4->TextChanged += gcnew System::EventHandler(this, &MyForm::textBox1_TextChanged);
+			// 
 			// speedTextBox
 			// 
 			this->speedTextBox->Location = System::Drawing::Point(179, 63);
@@ -663,6 +782,14 @@ private:
 			this->speedTextBox->Size = System::Drawing::Size(123, 20);
 			this->speedTextBox->TabIndex = 1;
 			this->speedTextBox->TextChanged += gcnew System::EventHandler(this, &MyForm::textBox1_TextChanged);
+			// 
+			// textBox2
+			// 
+			this->textBox2->Location = System::Drawing::Point(14, 145);
+			this->textBox2->Name = L"textBox2";
+			this->textBox2->Size = System::Drawing::Size(123, 20);
+			this->textBox2->TabIndex = 1;
+			this->textBox2->TextChanged += gcnew System::EventHandler(this, &MyForm::textBox1_TextChanged);
 			// 
 			// ageTextBox
 			// 
@@ -783,24 +910,39 @@ private:
 			// 
 			// statsPage
 			// 
-			this->statsPage->Controls->Add(this->textBox12);
-			this->statsPage->Controls->Add(this->textBox11);
-			this->statsPage->Controls->Add(this->textBox10);
-			this->statsPage->Controls->Add(this->textBox9);
-			this->statsPage->Controls->Add(this->textBox8);
-			this->statsPage->Controls->Add(this->textBox13);
-			this->statsPage->Controls->Add(this->textBox7);
-			this->statsPage->Controls->Add(this->charismaDropDown);
-			this->statsPage->Controls->Add(this->wisdomDropDown);
-			this->statsPage->Controls->Add(this->intelligenceDropDown);
-			this->statsPage->Controls->Add(this->dexterityDropDown);
-			this->statsPage->Controls->Add(this->constitutionDropDown);
+			this->statsPage->AllowDrop = true;
+			this->statsPage->Controls->Add(this->calculateButton);
+			this->statsPage->Controls->Add(this->statsRandomButton);
+			this->statsPage->Controls->Add(this->charFinalBox);
+			this->statsPage->Controls->Add(this->charModBox);
+			this->statsPage->Controls->Add(this->charBonusBox);
+			this->statsPage->Controls->Add(this->wisFinalBox);
+			this->statsPage->Controls->Add(this->wisModBox);
+			this->statsPage->Controls->Add(this->wisBonusBox);
+			this->statsPage->Controls->Add(this->intelFinalBox);
+			this->statsPage->Controls->Add(this->intelModBox);
+			this->statsPage->Controls->Add(this->intelBonusBox);
+			this->statsPage->Controls->Add(this->dexFinalBox);
+			this->statsPage->Controls->Add(this->dexModBox);
+			this->statsPage->Controls->Add(this->dexBonusBox);
+			this->statsPage->Controls->Add(this->constFinalBox);
+			this->statsPage->Controls->Add(this->constModBox);
+			this->statsPage->Controls->Add(this->constBonusBox);
+			this->statsPage->Controls->Add(this->strFinalBox);
+			this->statsPage->Controls->Add(this->strModBox);
+			this->statsPage->Controls->Add(this->strBonusBox);
+			this->statsPage->Controls->Add(this->charDropDown);
+			this->statsPage->Controls->Add(this->wisDropDown);
+			this->statsPage->Controls->Add(this->intelDropDown);
+			this->statsPage->Controls->Add(this->dexDropDown);
+			this->statsPage->Controls->Add(this->constDropDown);
 			this->statsPage->Controls->Add(this->label10);
 			this->statsPage->Controls->Add(this->label9);
 			this->statsPage->Controls->Add(this->label8);
-			this->statsPage->Controls->Add(this->strengthDropDown);
+			this->statsPage->Controls->Add(this->strDropDown);
 			this->statsPage->Controls->Add(this->label7);
 			this->statsPage->Controls->Add(this->label14);
+			this->statsPage->Controls->Add(this->label19);
 			this->statsPage->Controls->Add(this->label6);
 			this->statsPage->Controls->Add(this->label11);
 			this->statsPage->Controls->Add(this->label5);
@@ -813,123 +955,237 @@ private:
 			this->statsPage->UseVisualStyleBackColor = true;
 			this->statsPage->Click += gcnew System::EventHandler(this, &MyForm::statsPage_Click);
 			// 
-			// textBox12
+			// calculateButton
 			// 
-			this->textBox12->Location = System::Drawing::Point(76, 283);
-			this->textBox12->Name = L"textBox12";
-			this->textBox12->ReadOnly = true;
-			this->textBox12->Size = System::Drawing::Size(41, 20);
-			this->textBox12->TabIndex = 5;
+			this->calculateButton->Location = System::Drawing::Point(157, 35);
+			this->calculateButton->Name = L"calculateButton";
+			this->calculateButton->Size = System::Drawing::Size(75, 23);
+			this->calculateButton->TabIndex = 7;
+			this->calculateButton->Text = L"Calculate";
+			this->calculateButton->UseVisualStyleBackColor = true;
+			this->calculateButton->Click += gcnew System::EventHandler(this, &MyForm::calculateButton_Click);
 			// 
-			// textBox11
+			// statsRandomButton
 			// 
-			this->textBox11->Location = System::Drawing::Point(76, 242);
-			this->textBox11->Name = L"textBox11";
-			this->textBox11->ReadOnly = true;
-			this->textBox11->Size = System::Drawing::Size(41, 20);
-			this->textBox11->TabIndex = 5;
+			this->statsRandomButton->Location = System::Drawing::Point(24, 320);
+			this->statsRandomButton->Name = L"statsRandomButton";
+			this->statsRandomButton->Size = System::Drawing::Size(75, 23);
+			this->statsRandomButton->TabIndex = 6;
+			this->statsRandomButton->Text = L"Randomize";
+			this->statsRandomButton->UseVisualStyleBackColor = true;
 			// 
-			// textBox10
+			// charFinalBox
 			// 
-			this->textBox10->Location = System::Drawing::Point(76, 200);
-			this->textBox10->Name = L"textBox10";
-			this->textBox10->ReadOnly = true;
-			this->textBox10->Size = System::Drawing::Size(41, 20);
-			this->textBox10->TabIndex = 5;
+			this->charFinalBox->AllowDrop = true;
+			this->charFinalBox->Location = System::Drawing::Point(142, 283);
+			this->charFinalBox->Name = L"charFinalBox";
+			this->charFinalBox->Size = System::Drawing::Size(41, 20);
+			this->charFinalBox->TabIndex = 5;
 			// 
-			// textBox9
+			// charModBox
 			// 
-			this->textBox9->Location = System::Drawing::Point(76, 157);
-			this->textBox9->Name = L"textBox9";
-			this->textBox9->ReadOnly = true;
-			this->textBox9->Size = System::Drawing::Size(41, 20);
-			this->textBox9->TabIndex = 5;
+			this->charModBox->AllowDrop = true;
+			this->charModBox->Location = System::Drawing::Point(206, 283);
+			this->charModBox->Name = L"charModBox";
+			this->charModBox->Size = System::Drawing::Size(41, 20);
+			this->charModBox->TabIndex = 5;
 			// 
-			// textBox8
+			// charBonusBox
 			// 
-			this->textBox8->Location = System::Drawing::Point(76, 118);
-			this->textBox8->Name = L"textBox8";
-			this->textBox8->ReadOnly = true;
-			this->textBox8->Size = System::Drawing::Size(41, 20);
-			this->textBox8->TabIndex = 5;
+			this->charBonusBox->AllowDrop = true;
+			this->charBonusBox->Location = System::Drawing::Point(76, 283);
+			this->charBonusBox->Name = L"charBonusBox";
+			this->charBonusBox->Size = System::Drawing::Size(41, 20);
+			this->charBonusBox->TabIndex = 5;
 			// 
-			// textBox13
+			// wisFinalBox
 			// 
-			this->textBox13->Location = System::Drawing::Point(41, 29);
-			this->textBox13->Name = L"textBox13";
-			this->textBox13->ReadOnly = true;
-			this->textBox13->Size = System::Drawing::Size(41, 20);
-			this->textBox13->TabIndex = 5;
+			this->wisFinalBox->AllowDrop = true;
+			this->wisFinalBox->Location = System::Drawing::Point(142, 242);
+			this->wisFinalBox->Name = L"wisFinalBox";
+			this->wisFinalBox->Size = System::Drawing::Size(41, 20);
+			this->wisFinalBox->TabIndex = 5;
 			// 
-			// textBox7
+			// wisModBox
 			// 
-			this->textBox7->Location = System::Drawing::Point(76, 77);
-			this->textBox7->Name = L"textBox7";
-			this->textBox7->ReadOnly = true;
-			this->textBox7->Size = System::Drawing::Size(41, 20);
-			this->textBox7->TabIndex = 5;
+			this->wisModBox->AllowDrop = true;
+			this->wisModBox->Location = System::Drawing::Point(206, 242);
+			this->wisModBox->Name = L"wisModBox";
+			this->wisModBox->Size = System::Drawing::Size(41, 20);
+			this->wisModBox->TabIndex = 5;
 			// 
-			// charismaDropDown
+			// wisBonusBox
 			// 
-			this->charismaDropDown->FormattingEnabled = true;
-			this->charismaDropDown->Items->AddRange(gcnew cli::array< System::Object^  >(11) {
-				L"8", L"9", L"10", L"11", L"12", L"13",
-					L"14", L"15", L"16", L"17", L"18"
-			});
-			this->charismaDropDown->Location = System::Drawing::Point(7, 283);
-			this->charismaDropDown->Name = L"charismaDropDown";
-			this->charismaDropDown->Size = System::Drawing::Size(44, 21);
-			this->charismaDropDown->TabIndex = 4;
-			this->charismaDropDown->SelectedIndexChanged += gcnew System::EventHandler(this, &MyForm::wisdomDropDown_SelectedIndexChanged);
+			this->wisBonusBox->AllowDrop = true;
+			this->wisBonusBox->Location = System::Drawing::Point(76, 242);
+			this->wisBonusBox->Name = L"wisBonusBox";
+			this->wisBonusBox->Size = System::Drawing::Size(41, 20);
+			this->wisBonusBox->TabIndex = 5;
 			// 
-			// wisdomDropDown
+			// intelFinalBox
 			// 
-			this->wisdomDropDown->FormattingEnabled = true;
-			this->wisdomDropDown->Items->AddRange(gcnew cli::array< System::Object^  >(11) {
+			this->intelFinalBox->AllowDrop = true;
+			this->intelFinalBox->Location = System::Drawing::Point(142, 200);
+			this->intelFinalBox->Name = L"intelFinalBox";
+			this->intelFinalBox->Size = System::Drawing::Size(41, 20);
+			this->intelFinalBox->TabIndex = 5;
+			// 
+			// intelModBox
+			// 
+			this->intelModBox->AllowDrop = true;
+			this->intelModBox->Location = System::Drawing::Point(206, 200);
+			this->intelModBox->Name = L"intelModBox";
+			this->intelModBox->Size = System::Drawing::Size(41, 20);
+			this->intelModBox->TabIndex = 5;
+			// 
+			// intelBonusBox
+			// 
+			this->intelBonusBox->AllowDrop = true;
+			this->intelBonusBox->Location = System::Drawing::Point(76, 200);
+			this->intelBonusBox->Name = L"intelBonusBox";
+			this->intelBonusBox->Size = System::Drawing::Size(41, 20);
+			this->intelBonusBox->TabIndex = 5;
+			// 
+			// dexFinalBox
+			// 
+			this->dexFinalBox->AllowDrop = true;
+			this->dexFinalBox->Location = System::Drawing::Point(142, 157);
+			this->dexFinalBox->Name = L"dexFinalBox";
+			this->dexFinalBox->Size = System::Drawing::Size(41, 20);
+			this->dexFinalBox->TabIndex = 5;
+			// 
+			// dexModBox
+			// 
+			this->dexModBox->AllowDrop = true;
+			this->dexModBox->Location = System::Drawing::Point(206, 157);
+			this->dexModBox->Name = L"dexModBox";
+			this->dexModBox->Size = System::Drawing::Size(41, 20);
+			this->dexModBox->TabIndex = 5;
+			// 
+			// dexBonusBox
+			// 
+			this->dexBonusBox->AllowDrop = true;
+			this->dexBonusBox->Location = System::Drawing::Point(76, 157);
+			this->dexBonusBox->Name = L"dexBonusBox";
+			this->dexBonusBox->Size = System::Drawing::Size(41, 20);
+			this->dexBonusBox->TabIndex = 5;
+			// 
+			// constFinalBox
+			// 
+			this->constFinalBox->AllowDrop = true;
+			this->constFinalBox->Location = System::Drawing::Point(142, 118);
+			this->constFinalBox->Name = L"constFinalBox";
+			this->constFinalBox->Size = System::Drawing::Size(41, 20);
+			this->constFinalBox->TabIndex = 5;
+			// 
+			// constModBox
+			// 
+			this->constModBox->AllowDrop = true;
+			this->constModBox->Location = System::Drawing::Point(206, 118);
+			this->constModBox->Name = L"constModBox";
+			this->constModBox->Size = System::Drawing::Size(41, 20);
+			this->constModBox->TabIndex = 5;
+			// 
+			// constBonusBox
+			// 
+			this->constBonusBox->AllowDrop = true;
+			this->constBonusBox->Location = System::Drawing::Point(76, 118);
+			this->constBonusBox->Name = L"constBonusBox";
+			this->constBonusBox->Size = System::Drawing::Size(41, 20);
+			this->constBonusBox->TabIndex = 5;
+			// 
+			// strFinalBox
+			// 
+			this->strFinalBox->AllowDrop = true;
+			this->strFinalBox->Location = System::Drawing::Point(142, 77);
+			this->strFinalBox->Name = L"strFinalBox";
+			this->strFinalBox->Size = System::Drawing::Size(41, 20);
+			this->strFinalBox->TabIndex = 5;
+			// 
+			// strModBox
+			// 
+			this->strModBox->AllowDrop = true;
+			this->strModBox->Location = System::Drawing::Point(206, 77);
+			this->strModBox->Name = L"strModBox";
+			this->strModBox->Size = System::Drawing::Size(41, 20);
+			this->strModBox->TabIndex = 5;
+			this->strModBox->TextChanged += gcnew System::EventHandler(this, &MyForm::strModBox_TextChanged);
+			// 
+			// strBonusBox
+			// 
+			this->strBonusBox->AllowDrop = true;
+			this->strBonusBox->Location = System::Drawing::Point(76, 77);
+			this->strBonusBox->Name = L"strBonusBox";
+			this->strBonusBox->Size = System::Drawing::Size(41, 20);
+			this->strBonusBox->TabIndex = 5;
+			this->strBonusBox->TextChanged += gcnew System::EventHandler(this, &MyForm::strBonusBox_TextChanged);
+			// 
+			// charDropDown
+			// 
+			this->charDropDown->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
+			this->charDropDown->FormattingEnabled = true;
+			this->charDropDown->Items->AddRange(gcnew cli::array< System::Object^  >(11) {
 				L"8", L"9", L"10", L"11", L"12", L"13", L"14",
 					L"15", L"16", L"17", L"18"
 			});
-			this->wisdomDropDown->Location = System::Drawing::Point(8, 242);
-			this->wisdomDropDown->Name = L"wisdomDropDown";
-			this->wisdomDropDown->Size = System::Drawing::Size(44, 21);
-			this->wisdomDropDown->TabIndex = 4;
-			this->wisdomDropDown->SelectedIndexChanged += gcnew System::EventHandler(this, &MyForm::wisdomDropDown_SelectedIndexChanged);
+			this->charDropDown->Location = System::Drawing::Point(7, 283);
+			this->charDropDown->Name = L"charDropDown";
+			this->charDropDown->Size = System::Drawing::Size(44, 21);
+			this->charDropDown->TabIndex = 4;
+			this->charDropDown->SelectedIndexChanged += gcnew System::EventHandler(this, &MyForm::wisdomDropDown_SelectedIndexChanged);
 			// 
-			// intelligenceDropDown
+			// wisDropDown
 			// 
-			this->intelligenceDropDown->FormattingEnabled = true;
-			this->intelligenceDropDown->Items->AddRange(gcnew cli::array< System::Object^  >(11) {
-				L"8", L"9", L"10", L"11", L"12", L"13",
-					L"14", L"15", L"16", L"17", L"18"
+			this->wisDropDown->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
+			this->wisDropDown->FormattingEnabled = true;
+			this->wisDropDown->Items->AddRange(gcnew cli::array< System::Object^  >(11) {
+				L"8", L"9", L"10", L"11", L"12", L"13", L"14",
+					L"15", L"16", L"17", L"18"
 			});
-			this->intelligenceDropDown->Location = System::Drawing::Point(7, 200);
-			this->intelligenceDropDown->Name = L"intelligenceDropDown";
-			this->intelligenceDropDown->Size = System::Drawing::Size(44, 21);
-			this->intelligenceDropDown->TabIndex = 4;
+			this->wisDropDown->Location = System::Drawing::Point(8, 242);
+			this->wisDropDown->Name = L"wisDropDown";
+			this->wisDropDown->Size = System::Drawing::Size(44, 21);
+			this->wisDropDown->TabIndex = 4;
+			this->wisDropDown->SelectedIndexChanged += gcnew System::EventHandler(this, &MyForm::wisdomDropDown_SelectedIndexChanged);
 			// 
-			// dexterityDropDown
+			// intelDropDown
 			// 
-			this->dexterityDropDown->FormattingEnabled = true;
-			this->dexterityDropDown->Items->AddRange(gcnew cli::array< System::Object^  >(11) {
-				L"8", L"9", L"10", L"11", L"12", L"13",
-					L"14", L"15", L"16", L"17", L"18"
+			this->intelDropDown->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
+			this->intelDropDown->FormattingEnabled = true;
+			this->intelDropDown->Items->AddRange(gcnew cli::array< System::Object^  >(11) {
+				L"8", L"9", L"10", L"11", L"12", L"13", L"14",
+					L"15", L"16", L"17", L"18"
 			});
-			this->dexterityDropDown->Location = System::Drawing::Point(7, 157);
-			this->dexterityDropDown->Name = L"dexterityDropDown";
-			this->dexterityDropDown->Size = System::Drawing::Size(44, 21);
-			this->dexterityDropDown->TabIndex = 4;
+			this->intelDropDown->Location = System::Drawing::Point(7, 200);
+			this->intelDropDown->Name = L"intelDropDown";
+			this->intelDropDown->Size = System::Drawing::Size(44, 21);
+			this->intelDropDown->TabIndex = 4;
 			// 
-			// constitutionDropDown
+			// dexDropDown
 			// 
-			this->constitutionDropDown->FormattingEnabled = true;
-			this->constitutionDropDown->Items->AddRange(gcnew cli::array< System::Object^  >(11) {
-				L"8", L"9", L"10", L"11", L"12", L"13",
-					L"14", L"15", L"16", L"17", L"18"
+			this->dexDropDown->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
+			this->dexDropDown->FormattingEnabled = true;
+			this->dexDropDown->Items->AddRange(gcnew cli::array< System::Object^  >(11) {
+				L"8", L"9", L"10", L"11", L"12", L"13", L"14",
+					L"15", L"16", L"17", L"18"
 			});
-			this->constitutionDropDown->Location = System::Drawing::Point(8, 117);
-			this->constitutionDropDown->Name = L"constitutionDropDown";
-			this->constitutionDropDown->Size = System::Drawing::Size(44, 21);
-			this->constitutionDropDown->TabIndex = 4;
+			this->dexDropDown->Location = System::Drawing::Point(7, 157);
+			this->dexDropDown->Name = L"dexDropDown";
+			this->dexDropDown->Size = System::Drawing::Size(44, 21);
+			this->dexDropDown->TabIndex = 4;
+			// 
+			// constDropDown
+			// 
+			this->constDropDown->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
+			this->constDropDown->FormattingEnabled = true;
+			this->constDropDown->Items->AddRange(gcnew cli::array< System::Object^  >(11) {
+				L"8", L"9", L"10", L"11", L"12", L"13", L"14",
+					L"15", L"16", L"17", L"18"
+			});
+			this->constDropDown->Location = System::Drawing::Point(8, 117);
+			this->constDropDown->Name = L"constDropDown";
+			this->constDropDown->Size = System::Drawing::Size(44, 21);
+			this->constDropDown->TabIndex = 4;
 			// 
 			// label10
 			// 
@@ -960,18 +1216,19 @@ private:
 			this->label8->TabIndex = 0;
 			this->label8->Text = L"Intelligence";
 			// 
-			// strengthDropDown
+			// strDropDown
 			// 
-			this->strengthDropDown->FormattingEnabled = true;
-			this->strengthDropDown->Items->AddRange(gcnew cli::array< System::Object^  >(11) {
-				L"8", L"9", L"10", L"11", L"12", L"13",
-					L"14", L"15", L"16", L"17", L"18"
+			this->strDropDown->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
+			this->strDropDown->FormattingEnabled = true;
+			this->strDropDown->Items->AddRange(gcnew cli::array< System::Object^  >(11) {
+				L"8", L"9", L"10", L"11", L"12", L"13", L"14",
+					L"15", L"16", L"17", L"18"
 			});
-			this->strengthDropDown->Location = System::Drawing::Point(8, 77);
-			this->strengthDropDown->Name = L"strengthDropDown";
-			this->strengthDropDown->Size = System::Drawing::Size(44, 21);
-			this->strengthDropDown->TabIndex = 4;
-			this->strengthDropDown->SelectedIndexChanged += gcnew System::EventHandler(this, &MyForm::strengthDropDown_SelectedIndexChanged);
+			this->strDropDown->Location = System::Drawing::Point(8, 77);
+			this->strDropDown->Name = L"strDropDown";
+			this->strDropDown->Size = System::Drawing::Size(44, 21);
+			this->strDropDown->TabIndex = 4;
+			this->strDropDown->SelectedIndexChanged += gcnew System::EventHandler(this, &MyForm::strengthDropDown_SelectedIndexChanged);
 			// 
 			// label7
 			// 
@@ -985,11 +1242,21 @@ private:
 			// label14
 			// 
 			this->label14->AutoSize = true;
-			this->label14->Location = System::Drawing::Point(21, 13);
+			this->label14->Location = System::Drawing::Point(154, 61);
 			this->label14->Name = L"label14";
-			this->label14->Size = System::Drawing::Size(77, 13);
+			this->label14->Size = System::Drawing::Size(13, 13);
 			this->label14->TabIndex = 0;
-			this->label14->Text = L"Modifier + ½ lvl";
+			this->label14->Text = L"=";
+			this->label14->TextAlign = System::Drawing::ContentAlignment::TopCenter;
+			// 
+			// label19
+			// 
+			this->label19->AutoSize = true;
+			this->label19->Location = System::Drawing::Point(203, 61);
+			this->label19->Name = L"label19";
+			this->label19->Size = System::Drawing::Size(44, 13);
+			this->label19->TabIndex = 0;
+			this->label19->Text = L"Modifier";
 			// 
 			// label6
 			// 
@@ -1005,9 +1272,9 @@ private:
 			this->label11->AutoSize = true;
 			this->label11->Location = System::Drawing::Point(73, 61);
 			this->label11->Name = L"label11";
-			this->label11->Size = System::Drawing::Size(44, 13);
+			this->label11->Size = System::Drawing::Size(46, 13);
 			this->label11->TabIndex = 0;
-			this->label11->Text = L"Modifier";
+			this->label11->Text = L"+ Bonus";
 			// 
 			// label5
 			// 
@@ -1087,12 +1354,10 @@ private:
 			this->skillsPage->Controls->Add(this->arcanaTextBox);
 			this->skillsPage->Controls->Add(this->acrobaticsTextBox);
 			this->skillsPage->Controls->Add(this->acrobaticsMiscTextBox);
-			this->skillsPage->Controls->Add(this->textBox30);
 			this->skillsPage->Controls->Add(this->label15);
 			this->skillsPage->Controls->Add(this->label16);
 			this->skillsPage->Controls->Add(this->label17);
 			this->skillsPage->Controls->Add(this->label18);
-			this->skillsPage->Controls->Add(this->modifierhalfmod);
 			this->skillsPage->Controls->Add(this->label20);
 			this->skillsPage->Controls->Add(this->label22);
 			this->skillsPage->Location = System::Drawing::Point(4, 22);
@@ -1102,6 +1367,14 @@ private:
 			this->skillsPage->Text = L"Skills";
 			this->skillsPage->UseVisualStyleBackColor = true;
 			this->skillsPage->Click += gcnew System::EventHandler(this, &MyForm::skillsPage_Click);
+			// 
+			// skillsInfoBox
+			// 
+			this->skillsInfoBox->Location = System::Drawing::Point(238, 4);
+			this->skillsInfoBox->Name = L"skillsInfoBox";
+			this->skillsInfoBox->Size = System::Drawing::Size(232, 70);
+			this->skillsInfoBox->TabIndex = 80;
+			this->skillsInfoBox->Text = L"";
 			// 
 			// checkBox17
 			// 
@@ -1648,14 +1921,6 @@ private:
 			this->acrobaticsMiscTextBox->Size = System::Drawing::Size(41, 20);
 			this->acrobaticsMiscTextBox->TabIndex = 20;
 			// 
-			// textBox30
-			// 
-			this->textBox30->Location = System::Drawing::Point(71, 54);
-			this->textBox30->Name = L"textBox30";
-			this->textBox30->ReadOnly = true;
-			this->textBox30->Size = System::Drawing::Size(41, 20);
-			this->textBox30->TabIndex = 30;
-			// 
 			// label15
 			// 
 			this->label15->AutoSize = true;
@@ -1692,16 +1957,6 @@ private:
 			this->label18->TabIndex = 9;
 			this->label18->Text = L"Athletics";
 			// 
-			// modifierhalfmod
-			// 
-			this->modifierhalfmod->AutoSize = true;
-			this->modifierhalfmod->Location = System::Drawing::Point(68, 25);
-			this->modifierhalfmod->Name = L"modifierhalfmod";
-			this->modifierhalfmod->Size = System::Drawing::Size(47, 26);
-			this->modifierhalfmod->TabIndex = 8;
-			this->modifierhalfmod->Text = L"Modifier \n+ ½ lvl";
-			this->modifierhalfmod->Click += gcnew System::EventHandler(this, &MyForm::label19_Click);
-			// 
 			// label20
 			// 
 			this->label20->AutoSize = true;
@@ -1722,6 +1977,9 @@ private:
 			// 
 			// featsPage
 			// 
+			this->featsPage->Controls->Add(this->richTextBox1);
+			this->featsPage->Controls->Add(this->featsLabel);
+			this->featsPage->Controls->Add(this->featsDropDown);
 			this->featsPage->Location = System::Drawing::Point(4, 22);
 			this->featsPage->Name = L"featsPage";
 			this->featsPage->Padding = System::Windows::Forms::Padding(3);
@@ -1729,6 +1987,69 @@ private:
 			this->featsPage->TabIndex = 3;
 			this->featsPage->Text = L"Feats";
 			this->featsPage->UseVisualStyleBackColor = true;
+			// 
+			// richTextBox1
+			// 
+			this->richTextBox1->Location = System::Drawing::Point(8, 50);
+			this->richTextBox1->Name = L"richTextBox1";
+			this->richTextBox1->ReadOnly = true;
+			this->richTextBox1->Size = System::Drawing::Size(233, 96);
+			this->richTextBox1->TabIndex = 6;
+			this->richTextBox1->Text = L"";
+			// 
+			// featsLabel
+			// 
+			this->featsLabel->AutoSize = true;
+			this->featsLabel->Location = System::Drawing::Point(8, 4);
+			this->featsLabel->Name = L"featsLabel";
+			this->featsLabel->Size = System::Drawing::Size(33, 13);
+			this->featsLabel->TabIndex = 5;
+			this->featsLabel->Text = L"Feats";
+			// 
+			// featsDropDown
+			// 
+			this->featsDropDown->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
+			this->featsDropDown->FormattingEnabled = true;
+			this->featsDropDown->Items->AddRange(gcnew cli::array< System::Object^  >(8) {
+				L"Dragonborn", L"Dwarf", L"Eladrin", L"Elf",
+					L"Half-Elf", L"Halfing", L"Human", L"Tiefling"
+			});
+			this->featsDropDown->Location = System::Drawing::Point(7, 22);
+			this->featsDropDown->Name = L"featsDropDown";
+			this->featsDropDown->Size = System::Drawing::Size(121, 21);
+			this->featsDropDown->TabIndex = 4;
+			// 
+			// powersTab
+			// 
+			this->powersTab->Controls->Add(this->label35);
+			this->powersTab->Controls->Add(this->label4);
+			this->powersTab->Location = System::Drawing::Point(4, 22);
+			this->powersTab->Name = L"powersTab";
+			this->powersTab->Padding = System::Windows::Forms::Padding(3);
+			this->powersTab->Size = System::Drawing::Size(476, 535);
+			this->powersTab->TabIndex = 4;
+			this->powersTab->Text = L"Powers";
+			this->powersTab->UseVisualStyleBackColor = true;
+			// 
+			// label35
+			// 
+			this->label35->AutoSize = true;
+			this->label35->Location = System::Drawing::Point(93, 388);
+			this->label35->Name = L"label35";
+			this->label35->Size = System::Drawing::Size(202, 13);
+			this->label35->TabIndex = 1;
+			this->label35->Text = L"(sorry Steve. powers are too complicated)";
+			// 
+			// label4
+			// 
+			this->label4->AutoSize = true;
+			this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 72, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label4->Location = System::Drawing::Point(126, 210);
+			this->label4->Name = L"label4";
+			this->label4->Size = System::Drawing::Size(189, 108);
+			this->label4->TabIndex = 0;
+			this->label4->Text = L"NO";
 			// 
 			// menuStrip1
 			// 
@@ -1752,65 +2073,21 @@ private:
 			// openToolStripMenuItem
 			// 
 			this->openToolStripMenuItem->Name = L"openToolStripMenuItem";
-			this->openToolStripMenuItem->Size = System::Drawing::Size(152, 22);
+			this->openToolStripMenuItem->Size = System::Drawing::Size(103, 22);
 			this->openToolStripMenuItem->Text = L"Open";
 			// 
 			// saveToolStripMenuItem
 			// 
 			this->saveToolStripMenuItem->Name = L"saveToolStripMenuItem";
-			this->saveToolStripMenuItem->Size = System::Drawing::Size(152, 22);
+			this->saveToolStripMenuItem->Size = System::Drawing::Size(103, 22);
 			this->saveToolStripMenuItem->Text = L"Save";
 			// 
 			// exitToolStripMenuItem
 			// 
 			this->exitToolStripMenuItem->Name = L"exitToolStripMenuItem";
-			this->exitToolStripMenuItem->Size = System::Drawing::Size(152, 22);
+			this->exitToolStripMenuItem->Size = System::Drawing::Size(103, 22);
 			this->exitToolStripMenuItem->Text = L"Exit";
 			this->exitToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::exitToolStripMenuItem_Click);
-			// 
-			// textBox2
-			// 
-			this->textBox2->Location = System::Drawing::Point(14, 145);
-			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(123, 20);
-			this->textBox2->TabIndex = 1;
-			this->textBox2->TextChanged += gcnew System::EventHandler(this, &MyForm::textBox1_TextChanged);
-			// 
-			// comboBox1
-			// 
-			this->comboBox1->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
-			this->comboBox1->FormattingEnabled = true;
-			this->comboBox1->Items->AddRange(gcnew cli::array< System::Object^  >(2) { L"Male", L"Female" });
-			this->comboBox1->Location = System::Drawing::Point(13, 222);
-			this->comboBox1->Name = L"comboBox1";
-			this->comboBox1->Size = System::Drawing::Size(121, 21);
-			this->comboBox1->TabIndex = 3;
-			this->comboBox1->SelectedIndexChanged += gcnew System::EventHandler(this, &MyForm::classDropDown_SelectedIndexChanged);
-			// 
-			// skillsInfoBox
-			// 
-			this->skillsInfoBox->Location = System::Drawing::Point(238, 4);
-			this->skillsInfoBox->Name = L"skillsInfoBox";
-			this->skillsInfoBox->Size = System::Drawing::Size(232, 70);
-			this->skillsInfoBox->TabIndex = 80;
-			this->skillsInfoBox->Text = L"";
-			// 
-			// textBox3
-			// 
-			this->textBox3->Location = System::Drawing::Point(179, 23);
-			this->textBox3->Name = L"textBox3";
-			this->textBox3->ReadOnly = true;
-			this->textBox3->Size = System::Drawing::Size(57, 20);
-			this->textBox3->TabIndex = 1;
-			this->textBox3->TextChanged += gcnew System::EventHandler(this, &MyForm::textBox1_TextChanged);
-			// 
-			// textBox4
-			// 
-			this->textBox4->Location = System::Drawing::Point(252, 24);
-			this->textBox4->Name = L"textBox4";
-			this->textBox4->Size = System::Drawing::Size(57, 20);
-			this->textBox4->TabIndex = 1;
-			this->textBox4->TextChanged += gcnew System::EventHandler(this, &MyForm::textBox1_TextChanged);
 			// 
 			// MyForm
 			// 
@@ -1830,6 +2107,10 @@ private:
 			this->statsPage->PerformLayout();
 			this->skillsPage->ResumeLayout(false);
 			this->skillsPage->PerformLayout();
+			this->featsPage->ResumeLayout(false);
+			this->featsPage->PerformLayout();
+			this->powersTab->ResumeLayout(false);
+			this->powersTab->PerformLayout();
 			this->menuStrip1->ResumeLayout(false);
 			this->menuStrip1->PerformLayout();
 			this->ResumeLayout(false);
@@ -1843,36 +2124,102 @@ private:
 	}
 	private: System::Void textBox1_TextChanged(System::Object^  sender, System::EventArgs^  e) {
 	}
-private: System::Void classDropDown_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e) {
-}
-private: System::Void raceDropDown_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e) {
-}
-private: System::Void label3_Click(System::Object^  sender, System::EventArgs^  e) {
-}
-private: System::Void label2_Click(System::Object^  sender, System::EventArgs^  e) {
-}
-private: System::Void label1_Click(System::Object^  sender, System::EventArgs^  e) {
-}
-private: System::Void label4_Click(System::Object^  sender, System::EventArgs^  e) {
-}
-private: System::Void sizeBox_Click(System::Object^  sender, System::EventArgs^  e) {
-}
-private: System::Void wisdomDropDown_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e) {
-}
-private: System::Void label9_Click(System::Object^  sender, System::EventArgs^  e) {
-}
-private: System::Void label19_Click(System::Object^  sender, System::EventArgs^  e) {
-}
-private: System::Void checkBox16_CheckedChanged(System::Object^  sender, System::EventArgs^  e) {
-}
-private: System::Void exitToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
-	Application::Exit();
-}
-private: System::Void strengthDropDown_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e) {
-}
-private: System::Void statsPage_Click(System::Object^  sender, System::EventArgs^  e) {
-}
-private: System::Void skillsPage_Click(System::Object^  sender, System::EventArgs^  e) {
-}
-};
+	private: System::Void classDropDown_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e) {
+	}
+	private: System::Void raceDropDown_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e) {
+	}
+	private: System::Void label3_Click(System::Object^  sender, System::EventArgs^  e) {
+	}
+	private: System::Void label2_Click(System::Object^  sender, System::EventArgs^  e) {
+	}
+	private: System::Void label1_Click(System::Object^  sender, System::EventArgs^  e) {
+	}
+	private: System::Void label4_Click(System::Object^  sender, System::EventArgs^  e) {
+	}
+	private: System::Void sizeBox_Click(System::Object^  sender, System::EventArgs^  e) {
+	}
+	private: System::Void wisdomDropDown_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e) {
+	}
+	private: System::Void label9_Click(System::Object^  sender, System::EventArgs^  e) {
+	}
+	private: System::Void label19_Click(System::Object^  sender, System::EventArgs^  e) {
+	}
+	private: System::Void checkBox16_CheckedChanged(System::Object^  sender, System::EventArgs^  e) {
+	}
+	private: System::Void exitToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
+		Application::Exit();
+	}
+	private: System::Void strengthDropDown_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e) {
+	}
+	private: System::Void statsPage_Click(System::Object^  sender, System::EventArgs^  e) {
+	}
+	private: System::Void skillsPage_Click(System::Object^  sender, System::EventArgs^  e) {
+	}
+	private: System::Void strBonusBox_TextChanged(System::Object^  sender, System::EventArgs^  e) {
+	}
+	private: System::Void strModBox_TextChanged(System::Object^  sender, System::EventArgs^  e) {
+	}
+			 int calcMod(int a)
+			 {
+				 if (a == 8 || a == 9)
+					 return -1;
+				 else if (a == 10 || a == 11)
+					 return 0;
+				 else if (a == 12 || a == 13)
+					 return 1;
+				 else if (a == 14 || a == 15)
+					 return 2;
+				 else if (a == 16 || a == 17)
+					 return 3;
+				 else if (a == 18 || a == 19)
+					 return 4;
+				 else if (a == 20 || a == 21)
+					 return 5;
+			 }
+	private: System::Void calculateButton_Click(System::Object^  sender, System::EventArgs^  e) {
+		int a; int b;
+		if (strDropDown->Text != "" && strBonusBox->Text != "") {
+			b = std::stoi(context.marshal_as<std::string>(strBonusBox->Text));
+			a = std::stoi(context.marshal_as<std::string>(strDropDown->Text));
+			a = a + b;
+			strFinalBox->Text = context.marshal_as<System::String ^>(std::to_string(a));
+			strModBox->Text = context.marshal_as<System::String ^>(std::to_string(calcMod(a)));
+		}
+		if (constDropDown->Text != "" && constBonusBox->Text != "") {
+			b = std::stoi(context.marshal_as<std::string>(constBonusBox->Text));
+			a = std::stoi(context.marshal_as<std::string>(constDropDown->Text));
+			a = a + b;
+			constFinalBox->Text = context.marshal_as<System::String ^>(std::to_string(a));
+			constModBox->Text = context.marshal_as<System::String ^>(std::to_string(calcMod(a)));
+		}
+		if (dexDropDown->Text != "" && dexBonusBox->Text != "") {
+			b = std::stoi(context.marshal_as<std::string>(dexBonusBox->Text));
+			a = std::stoi(context.marshal_as<std::string>(dexDropDown->Text));
+			a = a + b;
+			dexFinalBox->Text = context.marshal_as<System::String ^>(std::to_string(a));
+			dexModBox->Text = context.marshal_as<System::String ^>(std::to_string(calcMod(a)));
+		}
+		if (intelDropDown->Text != "" && intelBonusBox->Text != "") {
+			b = std::stoi(context.marshal_as<std::string>(intelBonusBox->Text));
+			a = std::stoi(context.marshal_as<std::string>(intelDropDown->Text));
+			a = a + b;
+			intelFinalBox->Text = context.marshal_as<System::String ^>(std::to_string(a));
+			intelModBox->Text = context.marshal_as<System::String ^>(std::to_string(calcMod(a)));
+		}
+		if (wisDropDown->Text != "" && wisBonusBox->Text != "") {
+			b = std::stoi(context.marshal_as<std::string>(wisBonusBox->Text));
+			a = std::stoi(context.marshal_as<std::string>(wisDropDown->Text));
+			a = a + b;
+			wisFinalBox->Text = context.marshal_as<System::String ^>(std::to_string(a));
+			wisModBox->Text = context.marshal_as<System::String ^>(std::to_string(calcMod(a)));
+		}
+		if (charDropDown->Text != "" && charBonusBox->Text != "") {
+			b = std::stoi(context.marshal_as<std::string>(charBonusBox->Text));
+			a = std::stoi(context.marshal_as<std::string>(charDropDown->Text));
+			a = a + b;
+			charFinalBox->Text = context.marshal_as<System::String ^>(std::to_string(a));
+			charModBox->Text = context.marshal_as<System::String ^>(std::to_string(calcMod(a)));
+		}
+	}
+	};
 }
