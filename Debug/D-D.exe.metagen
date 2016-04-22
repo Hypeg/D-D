@@ -27,10 +27,10 @@ Class DnDGUI.MyForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     System.Windows.Forms.Label sizeBox : Public
     System.Windows.Forms.TextBox ageTextBox : Public
     System.Windows.Forms.Label ageBox : Public
-    System.Windows.Forms.ComboBox comboBox4 : Public
-    System.Windows.Forms.ComboBox comboBox3 : Public
-    System.Windows.Forms.ComboBox comboBox2 : Public
-    System.Windows.Forms.TextBox textBox1 : Public
+    System.Windows.Forms.ComboBox alignmentComboBox : Public
+    System.Windows.Forms.ComboBox weightComboBox : Public
+    System.Windows.Forms.ComboBox heightComboBox : Public
+    System.Windows.Forms.TextBox deityTextBox : Public
     System.Windows.Forms.Label dietyBox : Public
     System.Windows.Forms.Label genderBox : Public
     System.Windows.Forms.Label alignmentDropDown : Public
@@ -41,12 +41,12 @@ Class DnDGUI.MyForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     System.Windows.Forms.Label label12 : Public
     System.Windows.Forms.Label label13 : Public
     System.Windows.Forms.PictureBox pictureBox : Public
-    System.Windows.Forms.RichTextBox definitionTextBox : Public
+    System.Windows.Forms.RichTextBox classDescriptionTextBox : Public
     System.Windows.Forms.Label label38 : Public
-    System.Windows.Forms.TextBox textBox2 : Public
-    System.Windows.Forms.ComboBox comboBox1 : Public
-    System.Windows.Forms.TextBox textBox3 : Public
-    System.Windows.Forms.TextBox textBox4 : Public
+    System.Windows.Forms.TextBox sizeTextBox : Public
+    System.Windows.Forms.ComboBox genderComboBox : Public
+    System.Windows.Forms.TextBox maxHPTextBox : Public
+    System.Windows.Forms.TextBox currentHPTextBox : Public
     System.Windows.Forms.ComboBox featsDropDown : Public
-    System.Windows.Forms.RichTextBox richTextBox2 : Public
+    System.Windows.Forms.RichTextBox raceDescriptionBox : Public
     System.Windows.Forms.Label label39 : Public

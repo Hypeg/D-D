@@ -22,9 +22,6 @@ namespace DnDGUI {
 		MyForm(void)
 		{
 			InitializeComponent();
-			//
-			//TODO: Add the constructor code here
-			//
 		}
 
 	protected:
@@ -65,13 +62,17 @@ namespace DnDGUI {
 
 	public: System::Windows::Forms::TextBox^  ageTextBox;
 	public: System::Windows::Forms::Label^  ageBox;
-	public: System::Windows::Forms::ComboBox^  comboBox4;
-	public: System::Windows::Forms::ComboBox^  comboBox3;
-	public: System::Windows::Forms::ComboBox^  comboBox2;
+	public: System::Windows::Forms::ComboBox^  alignmentComboBox;
+
+	public: System::Windows::Forms::ComboBox^  weightComboBox;
+
+	public: System::Windows::Forms::ComboBox^  heightComboBox;
+	public: System::Windows::Forms::TextBox^  deityTextBox;
 
 
 
-	public: System::Windows::Forms::TextBox^  textBox1;
+
+
 
 	public: System::Windows::Forms::Label^  dietyBox;
 	public: System::Windows::Forms::Label^  genderBox;
@@ -261,33 +262,51 @@ namespace DnDGUI {
 	private: System::Windows::Forms::Label^  label22;
 	private: System::Windows::Forms::Label^  label34;
 	private: System::Windows::Forms::Label^  label21;
+private: System::Windows::Forms::CheckBox^  streetwiseTrainedCheckBox;
 
 
 
 
-	private: System::Windows::Forms::CheckBox^  checkBox16;
-	private: System::Windows::Forms::CheckBox^  checkBox15;
-	private: System::Windows::Forms::CheckBox^  checkBox14;
-	private: System::Windows::Forms::CheckBox^  checkBox13;
-	private: System::Windows::Forms::CheckBox^  checkBox12;
-	private: System::Windows::Forms::CheckBox^  checkBox11;
-	private: System::Windows::Forms::CheckBox^  checkBox10;
-	private: System::Windows::Forms::CheckBox^  checkBox9;
-	private: System::Windows::Forms::CheckBox^  checkBox8;
-	private: System::Windows::Forms::CheckBox^  checkBox7;
-	private: System::Windows::Forms::CheckBox^  checkBox6;
-	private: System::Windows::Forms::CheckBox^  checkBox5;
-	private: System::Windows::Forms::CheckBox^  checkBox4;
-	private: System::Windows::Forms::CheckBox^  checkBox3;
-	private: System::Windows::Forms::CheckBox^  checkBox2;
-	private: System::Windows::Forms::CheckBox^  checkBox1;
-	private: System::Windows::Forms::CheckBox^  checkBox17;
+
+private: System::Windows::Forms::CheckBox^  stealthTrainedCheckBox;
+
+private: System::Windows::Forms::CheckBox^  religionTrainedCheckBox;
+
+private: System::Windows::Forms::CheckBox^  perceptionTrainedCheckBox;
+
+private: System::Windows::Forms::CheckBox^  natureTrainedCheckBox;
+
+private: System::Windows::Forms::CheckBox^  intimidateTrainedCheckBox;
+
+private: System::Windows::Forms::CheckBox^  insightTrainedCheckBox;
+
+private: System::Windows::Forms::CheckBox^  historyTrainedCheckBox;
+
+private: System::Windows::Forms::CheckBox^  healTrainedCheckBox;
+
+private: System::Windows::Forms::CheckBox^  enduranceTrainedCheckBox;
+
+private: System::Windows::Forms::CheckBox^  dungeoneeringTrainedCheckBox;
+
+private: System::Windows::Forms::CheckBox^  diplomacyTrainedCheckBox;
+
+private: System::Windows::Forms::CheckBox^  bluffTrainedCheckBox;
+
+private: System::Windows::Forms::CheckBox^  athleticsTrainedCheckBox;
+
+private: System::Windows::Forms::CheckBox^  arcanaTrainedCheckBox;
+
+private: System::Windows::Forms::CheckBox^  acrobaticsTrainedCheckBox;
+private: System::Windows::Forms::CheckBox^  thieveryTrainedCheckBox;
+
+
 	private: System::Windows::Forms::Label^  label37;
 	private: System::Windows::Forms::Label^  label36;
 	private: System::Windows::Forms::TabPage^  featsPage;
 	public: System::Windows::Forms::PictureBox^  pictureBox;
+public: System::Windows::Forms::RichTextBox^  classDescriptionTextBox;
 	private:
-	public: System::Windows::Forms::RichTextBox^  definitionTextBox;
+
 	public: System::Windows::Forms::Label^  label38;
 
 
@@ -316,11 +335,17 @@ namespace DnDGUI {
 	private: System::Windows::Forms::ToolStripMenuItem^  openToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^  saveToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^  exitToolStripMenuItem;
-	public: System::Windows::Forms::TextBox^  textBox2;
-	public: System::Windows::Forms::ComboBox^  comboBox1;
-	public: System::Windows::Forms::TextBox^  textBox3;
+public: System::Windows::Forms::TextBox^  sizeTextBox;
+private:
+
+public: System::Windows::Forms::ComboBox^  genderComboBox;
+public: System::Windows::Forms::TextBox^  maxHPTextBox;
+
+
 	private: System::Windows::Forms::RichTextBox^  skillsInfoBox;
-	public: System::Windows::Forms::TextBox^  textBox4;
+public: System::Windows::Forms::TextBox^  currentHPTextBox;
+private:
+
 	public: System::Windows::Forms::ComboBox^  featsDropDown;
 	private: System::Windows::Forms::Button^  statsRandomButton;
 	public:
@@ -368,7 +393,9 @@ namespace DnDGUI {
 	private: System::Windows::Forms::TabPage^  powersTab;
 	private: System::Windows::Forms::Label^  label35;
 	private: System::Windows::Forms::Label^  label4;
-public: System::Windows::Forms::RichTextBox^  richTextBox2;
+public: System::Windows::Forms::RichTextBox^  raceDescriptionBox;
+private:
+
 private:
 public: System::Windows::Forms::Label^  label39;
 
@@ -398,23 +425,25 @@ public: System::Windows::Forms::Label^  label39;
 			this->tabControl1 = (gcnew System::Windows::Forms::TabControl());
 			this->generalPage = (gcnew System::Windows::Forms::TabPage());
 			this->pictureBox = (gcnew System::Windows::Forms::PictureBox());
-			this->definitionTextBox = (gcnew System::Windows::Forms::RichTextBox());
-			this->comboBox4 = (gcnew System::Windows::Forms::ComboBox());
-			this->comboBox3 = (gcnew System::Windows::Forms::ComboBox());
-			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
-			this->comboBox2 = (gcnew System::Windows::Forms::ComboBox());
+			this->raceDescriptionBox = (gcnew System::Windows::Forms::RichTextBox());
+			this->classDescriptionTextBox = (gcnew System::Windows::Forms::RichTextBox());
+			this->alignmentComboBox = (gcnew System::Windows::Forms::ComboBox());
+			this->weightComboBox = (gcnew System::Windows::Forms::ComboBox());
+			this->genderComboBox = (gcnew System::Windows::Forms::ComboBox());
+			this->heightComboBox = (gcnew System::Windows::Forms::ComboBox());
 			this->classDropDown = (gcnew System::Windows::Forms::ComboBox());
 			this->raceDropDown = (gcnew System::Windows::Forms::ComboBox());
 			this->label13 = (gcnew System::Windows::Forms::Label());
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->label12 = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
-			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox4 = (gcnew System::Windows::Forms::TextBox());
+			this->deityTextBox = (gcnew System::Windows::Forms::TextBox());
+			this->maxHPTextBox = (gcnew System::Windows::Forms::TextBox());
+			this->currentHPTextBox = (gcnew System::Windows::Forms::TextBox());
 			this->speedTextBox = (gcnew System::Windows::Forms::TextBox());
-			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
+			this->sizeTextBox = (gcnew System::Windows::Forms::TextBox());
 			this->ageTextBox = (gcnew System::Windows::Forms::TextBox());
+			this->label39 = (gcnew System::Windows::Forms::Label());
 			this->nameTextBox = (gcnew System::Windows::Forms::TextBox());
 			this->label38 = (gcnew System::Windows::Forms::Label());
 			this->dietyBox = (gcnew System::Windows::Forms::Label());
@@ -464,23 +493,23 @@ public: System::Windows::Forms::Label^  label39;
 			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->skillsPage = (gcnew System::Windows::Forms::TabPage());
 			this->skillsInfoBox = (gcnew System::Windows::Forms::RichTextBox());
-			this->checkBox17 = (gcnew System::Windows::Forms::CheckBox());
-			this->checkBox16 = (gcnew System::Windows::Forms::CheckBox());
-			this->checkBox15 = (gcnew System::Windows::Forms::CheckBox());
-			this->checkBox14 = (gcnew System::Windows::Forms::CheckBox());
-			this->checkBox13 = (gcnew System::Windows::Forms::CheckBox());
-			this->checkBox12 = (gcnew System::Windows::Forms::CheckBox());
-			this->checkBox11 = (gcnew System::Windows::Forms::CheckBox());
-			this->checkBox10 = (gcnew System::Windows::Forms::CheckBox());
-			this->checkBox9 = (gcnew System::Windows::Forms::CheckBox());
-			this->checkBox8 = (gcnew System::Windows::Forms::CheckBox());
-			this->checkBox7 = (gcnew System::Windows::Forms::CheckBox());
-			this->checkBox6 = (gcnew System::Windows::Forms::CheckBox());
-			this->checkBox5 = (gcnew System::Windows::Forms::CheckBox());
-			this->checkBox4 = (gcnew System::Windows::Forms::CheckBox());
-			this->checkBox3 = (gcnew System::Windows::Forms::CheckBox());
-			this->checkBox2 = (gcnew System::Windows::Forms::CheckBox());
-			this->checkBox1 = (gcnew System::Windows::Forms::CheckBox());
+			this->thieveryTrainedCheckBox = (gcnew System::Windows::Forms::CheckBox());
+			this->streetwiseTrainedCheckBox = (gcnew System::Windows::Forms::CheckBox());
+			this->stealthTrainedCheckBox = (gcnew System::Windows::Forms::CheckBox());
+			this->religionTrainedCheckBox = (gcnew System::Windows::Forms::CheckBox());
+			this->perceptionTrainedCheckBox = (gcnew System::Windows::Forms::CheckBox());
+			this->natureTrainedCheckBox = (gcnew System::Windows::Forms::CheckBox());
+			this->intimidateTrainedCheckBox = (gcnew System::Windows::Forms::CheckBox());
+			this->insightTrainedCheckBox = (gcnew System::Windows::Forms::CheckBox());
+			this->historyTrainedCheckBox = (gcnew System::Windows::Forms::CheckBox());
+			this->healTrainedCheckBox = (gcnew System::Windows::Forms::CheckBox());
+			this->enduranceTrainedCheckBox = (gcnew System::Windows::Forms::CheckBox());
+			this->dungeoneeringTrainedCheckBox = (gcnew System::Windows::Forms::CheckBox());
+			this->diplomacyTrainedCheckBox = (gcnew System::Windows::Forms::CheckBox());
+			this->bluffTrainedCheckBox = (gcnew System::Windows::Forms::CheckBox());
+			this->athleticsTrainedCheckBox = (gcnew System::Windows::Forms::CheckBox());
+			this->arcanaTrainedCheckBox = (gcnew System::Windows::Forms::CheckBox());
+			this->acrobaticsTrainedCheckBox = (gcnew System::Windows::Forms::CheckBox());
 			this->label34 = (gcnew System::Windows::Forms::Label());
 			this->label37 = (gcnew System::Windows::Forms::Label());
 			this->label36 = (gcnew System::Windows::Forms::Label());
@@ -548,8 +577,6 @@ public: System::Windows::Forms::Label^  label39;
 			this->openToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->saveToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->exitToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->label39 = (gcnew System::Windows::Forms::Label());
-			this->richTextBox2 = (gcnew System::Windows::Forms::RichTextBox());
 			this->tabControl1->SuspendLayout();
 			this->generalPage->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox))->BeginInit();
@@ -576,23 +603,23 @@ public: System::Windows::Forms::Label^  label39;
 			// generalPage
 			// 
 			this->generalPage->Controls->Add(this->pictureBox);
-			this->generalPage->Controls->Add(this->richTextBox2);
-			this->generalPage->Controls->Add(this->definitionTextBox);
-			this->generalPage->Controls->Add(this->comboBox4);
-			this->generalPage->Controls->Add(this->comboBox3);
-			this->generalPage->Controls->Add(this->comboBox1);
-			this->generalPage->Controls->Add(this->comboBox2);
+			this->generalPage->Controls->Add(this->raceDescriptionBox);
+			this->generalPage->Controls->Add(this->classDescriptionTextBox);
+			this->generalPage->Controls->Add(this->alignmentComboBox);
+			this->generalPage->Controls->Add(this->weightComboBox);
+			this->generalPage->Controls->Add(this->genderComboBox);
+			this->generalPage->Controls->Add(this->heightComboBox);
 			this->generalPage->Controls->Add(this->classDropDown);
 			this->generalPage->Controls->Add(this->raceDropDown);
 			this->generalPage->Controls->Add(this->label13);
 			this->generalPage->Controls->Add(this->label3);
 			this->generalPage->Controls->Add(this->label12);
 			this->generalPage->Controls->Add(this->label2);
-			this->generalPage->Controls->Add(this->textBox1);
-			this->generalPage->Controls->Add(this->textBox3);
-			this->generalPage->Controls->Add(this->textBox4);
+			this->generalPage->Controls->Add(this->deityTextBox);
+			this->generalPage->Controls->Add(this->maxHPTextBox);
+			this->generalPage->Controls->Add(this->currentHPTextBox);
 			this->generalPage->Controls->Add(this->speedTextBox);
-			this->generalPage->Controls->Add(this->textBox2);
+			this->generalPage->Controls->Add(this->sizeTextBox);
 			this->generalPage->Controls->Add(this->ageTextBox);
 			this->generalPage->Controls->Add(this->label39);
 			this->generalPage->Controls->Add(this->nameTextBox);
@@ -623,72 +650,81 @@ public: System::Windows::Forms::Label^  label39;
 			this->pictureBox->TabIndex = 5;
 			this->pictureBox->TabStop = false;
 			// 
-			// definitionTextBox
+			// raceDescriptionBox
 			// 
-			this->definitionTextBox->Location = System::Drawing::Point(179, 183);
-			this->definitionTextBox->Name = L"definitionTextBox";
-			this->definitionTextBox->ReadOnly = true;
-			this->definitionTextBox->Size = System::Drawing::Size(226, 334);
-			this->definitionTextBox->TabIndex = 4;
-			this->definitionTextBox->Text = L"";
+			this->raceDescriptionBox->Location = System::Drawing::Point(421, 183);
+			this->raceDescriptionBox->Name = L"raceDescriptionBox";
+			this->raceDescriptionBox->ReadOnly = true;
+			this->raceDescriptionBox->Size = System::Drawing::Size(226, 334);
+			this->raceDescriptionBox->TabIndex = 4;
+			this->raceDescriptionBox->Text = L"";
 			// 
-			// comboBox4
+			// classDescriptionTextBox
 			// 
-			this->comboBox4->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
-			this->comboBox4->FormattingEnabled = true;
-			this->comboBox4->Items->AddRange(gcnew cli::array< System::Object^  >(5) {
-				L"Lawful Good", L"Good", L"Unaligned", L"Evil",
-					L"Chaotic Evil"
+			this->classDescriptionTextBox->Location = System::Drawing::Point(179, 183);
+			this->classDescriptionTextBox->Name = L"classDescriptionTextBox";
+			this->classDescriptionTextBox->ReadOnly = true;
+			this->classDescriptionTextBox->Size = System::Drawing::Size(226, 334);
+			this->classDescriptionTextBox->TabIndex = 4;
+			this->classDescriptionTextBox->Text = L"";
+			// 
+			// alignmentComboBox
+			// 
+			this->alignmentComboBox->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
+			this->alignmentComboBox->FormattingEnabled = true;
+			this->alignmentComboBox->Items->AddRange(gcnew cli::array< System::Object^  >(5) {
+				L"Lawful Good", L"Good", L"Unaligned",
+					L"Evil", L"Chaotic Evil"
 			});
-			this->comboBox4->Location = System::Drawing::Point(13, 345);
-			this->comboBox4->Name = L"comboBox4";
-			this->comboBox4->Size = System::Drawing::Size(121, 21);
-			this->comboBox4->TabIndex = 3;
-			this->comboBox4->SelectedIndexChanged += gcnew System::EventHandler(this, &MyForm::classDropDown_SelectedIndexChanged);
+			this->alignmentComboBox->Location = System::Drawing::Point(13, 345);
+			this->alignmentComboBox->Name = L"alignmentComboBox";
+			this->alignmentComboBox->Size = System::Drawing::Size(121, 21);
+			this->alignmentComboBox->TabIndex = 3;
+			this->alignmentComboBox->SelectedIndexChanged += gcnew System::EventHandler(this, &MyForm::classDropDown_SelectedIndexChanged);
 			// 
-			// comboBox3
+			// weightComboBox
 			// 
-			this->comboBox3->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
-			this->comboBox3->FormattingEnabled = true;
-			this->comboBox3->Items->AddRange(gcnew cli::array< System::Object^  >(51) {
-				L"70", L"75", L"80", L"85", L"90", L"95", L"100",
-					L"105", L"110", L"115", L"120", L"125", L"130", L"135", L"140", L"145", L"150", L"155", L"160", L"165", L"170", L"175", L"180",
-					L"185", L"190", L"195", L"200", L"205", L"210", L"215", L"220", L"225", L"230", L"235", L"240", L"245", L"250", L"255", L"260",
-					L"265", L"270", L"275", L"280", L"285", L"290", L"295", L"300", L"305", L"310", L"315", L"320"
+			this->weightComboBox->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
+			this->weightComboBox->FormattingEnabled = true;
+			this->weightComboBox->Items->AddRange(gcnew cli::array< System::Object^  >(51) {
+				L"70", L"75", L"80", L"85", L"90", L"95",
+					L"100", L"105", L"110", L"115", L"120", L"125", L"130", L"135", L"140", L"145", L"150", L"155", L"160", L"165", L"170", L"175",
+					L"180", L"185", L"190", L"195", L"200", L"205", L"210", L"215", L"220", L"225", L"230", L"235", L"240", L"245", L"250", L"255",
+					L"260", L"265", L"270", L"275", L"280", L"285", L"290", L"295", L"300", L"305", L"310", L"315", L"320"
 			});
-			this->comboBox3->Location = System::Drawing::Point(13, 301);
-			this->comboBox3->Name = L"comboBox3";
-			this->comboBox3->Size = System::Drawing::Size(121, 21);
-			this->comboBox3->TabIndex = 3;
-			this->comboBox3->SelectedIndexChanged += gcnew System::EventHandler(this, &MyForm::classDropDown_SelectedIndexChanged);
+			this->weightComboBox->Location = System::Drawing::Point(13, 301);
+			this->weightComboBox->Name = L"weightComboBox";
+			this->weightComboBox->Size = System::Drawing::Size(121, 21);
+			this->weightComboBox->TabIndex = 3;
+			this->weightComboBox->SelectedIndexChanged += gcnew System::EventHandler(this, &MyForm::classDropDown_SelectedIndexChanged);
 			// 
-			// comboBox1
+			// genderComboBox
 			// 
-			this->comboBox1->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
-			this->comboBox1->FormattingEnabled = true;
-			this->comboBox1->Items->AddRange(gcnew cli::array< System::Object^  >(2) { L"Male", L"Female" });
-			this->comboBox1->Location = System::Drawing::Point(13, 222);
-			this->comboBox1->Name = L"comboBox1";
-			this->comboBox1->Size = System::Drawing::Size(121, 21);
-			this->comboBox1->TabIndex = 3;
-			this->comboBox1->SelectedIndexChanged += gcnew System::EventHandler(this, &MyForm::classDropDown_SelectedIndexChanged);
+			this->genderComboBox->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
+			this->genderComboBox->FormattingEnabled = true;
+			this->genderComboBox->Items->AddRange(gcnew cli::array< System::Object^  >(2) { L"Male", L"Female" });
+			this->genderComboBox->Location = System::Drawing::Point(13, 222);
+			this->genderComboBox->Name = L"genderComboBox";
+			this->genderComboBox->Size = System::Drawing::Size(121, 21);
+			this->genderComboBox->TabIndex = 3;
+			this->genderComboBox->SelectedIndexChanged += gcnew System::EventHandler(this, &MyForm::classDropDown_SelectedIndexChanged);
 			// 
-			// comboBox2
+			// heightComboBox
 			// 
-			this->comboBox2->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
-			this->comboBox2->FormattingEnabled = true;
-			this->comboBox2->Items->AddRange(gcnew cli::array< System::Object^  >(49) {
-				L"3\'", L"3\'1", L"3\'2", L"3\'3", L"3\'4", L"3\'5",
-					L"3\'6", L"3\'7", L"3\'8", L"3\'9", L"3\'10", L"3\'11", L"4\'", L"4\'1", L"4\'2", L"4\'3", L"4\'4", L"4\'5", L"4\'6", L"4\'7",
-					L"4\'8", L"4\'9", L"4\'10", L"4\'11", L"5\'", L"5\'1", L"5\'2", L"5\'3", L"5\'4", L"5\'5", L"5\'6", L"5\'7", L"5\'8", L"5\'9",
-					L"5\'10", L"5\'11", L"6\'", L"6\'1", L"6\'2", L"6\'3", L"6\'4", L"6\'5", L"6\'6", L"6\'7", L"6\'8", L"6\'9", L"6\'10", L"6\'11",
-					L"7\'"
+			this->heightComboBox->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
+			this->heightComboBox->FormattingEnabled = true;
+			this->heightComboBox->Items->AddRange(gcnew cli::array< System::Object^  >(49) {
+				L"3\'", L"3\'1", L"3\'2", L"3\'3", L"3\'4",
+					L"3\'5", L"3\'6", L"3\'7", L"3\'8", L"3\'9", L"3\'10", L"3\'11", L"4\'", L"4\'1", L"4\'2", L"4\'3", L"4\'4", L"4\'5", L"4\'6",
+					L"4\'7", L"4\'8", L"4\'9", L"4\'10", L"4\'11", L"5\'", L"5\'1", L"5\'2", L"5\'3", L"5\'4", L"5\'5", L"5\'6", L"5\'7", L"5\'8",
+					L"5\'9", L"5\'10", L"5\'11", L"6\'", L"6\'1", L"6\'2", L"6\'3", L"6\'4", L"6\'5", L"6\'6", L"6\'7", L"6\'8", L"6\'9", L"6\'10",
+					L"6\'11", L"7\'"
 			});
-			this->comboBox2->Location = System::Drawing::Point(13, 261);
-			this->comboBox2->Name = L"comboBox2";
-			this->comboBox2->Size = System::Drawing::Size(121, 21);
-			this->comboBox2->TabIndex = 3;
-			this->comboBox2->SelectedIndexChanged += gcnew System::EventHandler(this, &MyForm::classDropDown_SelectedIndexChanged);
+			this->heightComboBox->Location = System::Drawing::Point(13, 261);
+			this->heightComboBox->Name = L"heightComboBox";
+			this->heightComboBox->Size = System::Drawing::Size(121, 21);
+			this->heightComboBox->TabIndex = 3;
+			this->heightComboBox->SelectedIndexChanged += gcnew System::EventHandler(this, &MyForm::classDropDown_SelectedIndexChanged);
 			// 
 			// classDropDown
 			// 
@@ -758,30 +794,30 @@ public: System::Windows::Forms::Label^  label39;
 			this->label2->Text = L"Race";
 			this->label2->Click += gcnew System::EventHandler(this, &MyForm::label2_Click);
 			// 
-			// textBox1
+			// deityTextBox
 			// 
-			this->textBox1->Location = System::Drawing::Point(14, 385);
-			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(123, 20);
-			this->textBox1->TabIndex = 1;
-			this->textBox1->TextChanged += gcnew System::EventHandler(this, &MyForm::textBox1_TextChanged);
+			this->deityTextBox->Location = System::Drawing::Point(14, 385);
+			this->deityTextBox->Name = L"deityTextBox";
+			this->deityTextBox->Size = System::Drawing::Size(123, 20);
+			this->deityTextBox->TabIndex = 1;
+			this->deityTextBox->TextChanged += gcnew System::EventHandler(this, &MyForm::textBox1_TextChanged);
 			// 
-			// textBox3
+			// maxHPTextBox
 			// 
-			this->textBox3->Location = System::Drawing::Point(179, 23);
-			this->textBox3->Name = L"textBox3";
-			this->textBox3->ReadOnly = true;
-			this->textBox3->Size = System::Drawing::Size(57, 20);
-			this->textBox3->TabIndex = 1;
-			this->textBox3->TextChanged += gcnew System::EventHandler(this, &MyForm::textBox1_TextChanged);
+			this->maxHPTextBox->Location = System::Drawing::Point(179, 23);
+			this->maxHPTextBox->Name = L"maxHPTextBox";
+			this->maxHPTextBox->ReadOnly = true;
+			this->maxHPTextBox->Size = System::Drawing::Size(57, 20);
+			this->maxHPTextBox->TabIndex = 1;
+			this->maxHPTextBox->TextChanged += gcnew System::EventHandler(this, &MyForm::textBox1_TextChanged);
 			// 
-			// textBox4
+			// currentHPTextBox
 			// 
-			this->textBox4->Location = System::Drawing::Point(252, 24);
-			this->textBox4->Name = L"textBox4";
-			this->textBox4->Size = System::Drawing::Size(57, 20);
-			this->textBox4->TabIndex = 1;
-			this->textBox4->TextChanged += gcnew System::EventHandler(this, &MyForm::textBox1_TextChanged);
+			this->currentHPTextBox->Location = System::Drawing::Point(252, 24);
+			this->currentHPTextBox->Name = L"currentHPTextBox";
+			this->currentHPTextBox->Size = System::Drawing::Size(57, 20);
+			this->currentHPTextBox->TabIndex = 1;
+			this->currentHPTextBox->TextChanged += gcnew System::EventHandler(this, &MyForm::textBox1_TextChanged);
 			// 
 			// speedTextBox
 			// 
@@ -791,13 +827,13 @@ public: System::Windows::Forms::Label^  label39;
 			this->speedTextBox->TabIndex = 1;
 			this->speedTextBox->TextChanged += gcnew System::EventHandler(this, &MyForm::textBox1_TextChanged);
 			// 
-			// textBox2
+			// sizeTextBox
 			// 
-			this->textBox2->Location = System::Drawing::Point(14, 145);
-			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(123, 20);
-			this->textBox2->TabIndex = 1;
-			this->textBox2->TextChanged += gcnew System::EventHandler(this, &MyForm::textBox1_TextChanged);
+			this->sizeTextBox->Location = System::Drawing::Point(14, 145);
+			this->sizeTextBox->Name = L"sizeTextBox";
+			this->sizeTextBox->Size = System::Drawing::Size(123, 20);
+			this->sizeTextBox->TabIndex = 1;
+			this->sizeTextBox->TextChanged += gcnew System::EventHandler(this, &MyForm::textBox1_TextChanged);
 			// 
 			// ageTextBox
 			// 
@@ -807,13 +843,22 @@ public: System::Windows::Forms::Label^  label39;
 			this->ageTextBox->TabIndex = 1;
 			this->ageTextBox->TextChanged += gcnew System::EventHandler(this, &MyForm::textBox1_TextChanged);
 			// 
+			// label39
+			// 
+			this->label39->AutoSize = true;
+			this->label39->Location = System::Drawing::Point(416, 163);
+			this->label39->Name = L"label39";
+			this->label39->Size = System::Drawing::Size(89, 13);
+			this->label39->TabIndex = 0;
+			this->label39->Text = L"Race Description";
+			this->label39->Click += gcnew System::EventHandler(this, &MyForm::label4_Click);
+			// 
 			// nameTextBox
 			// 
 			this->nameTextBox->Location = System::Drawing::Point(13, 24);
 			this->nameTextBox->Name = L"nameTextBox";
 			this->nameTextBox->Size = System::Drawing::Size(123, 20);
 			this->nameTextBox->TabIndex = 1;
-			this->nameTextBox->Text = L"test";
 			this->nameTextBox->TextChanged += gcnew System::EventHandler(this, &MyForm::textBox1_TextChanged);
 			// 
 			// label38
@@ -957,7 +1002,7 @@ public: System::Windows::Forms::Label^  label39;
 			this->statsPage->Location = System::Drawing::Point(4, 22);
 			this->statsPage->Name = L"statsPage";
 			this->statsPage->Padding = System::Windows::Forms::Padding(3);
-			this->statsPage->Size = System::Drawing::Size(476, 535);
+			this->statsPage->Size = System::Drawing::Size(654, 535);
 			this->statsPage->TabIndex = 1;
 			this->statsPage->Text = L"Stats";
 			this->statsPage->UseVisualStyleBackColor = true;
@@ -1296,23 +1341,23 @@ public: System::Windows::Forms::Label^  label39;
 			// skillsPage
 			// 
 			this->skillsPage->Controls->Add(this->skillsInfoBox);
-			this->skillsPage->Controls->Add(this->checkBox17);
-			this->skillsPage->Controls->Add(this->checkBox16);
-			this->skillsPage->Controls->Add(this->checkBox15);
-			this->skillsPage->Controls->Add(this->checkBox14);
-			this->skillsPage->Controls->Add(this->checkBox13);
-			this->skillsPage->Controls->Add(this->checkBox12);
-			this->skillsPage->Controls->Add(this->checkBox11);
-			this->skillsPage->Controls->Add(this->checkBox10);
-			this->skillsPage->Controls->Add(this->checkBox9);
-			this->skillsPage->Controls->Add(this->checkBox8);
-			this->skillsPage->Controls->Add(this->checkBox7);
-			this->skillsPage->Controls->Add(this->checkBox6);
-			this->skillsPage->Controls->Add(this->checkBox5);
-			this->skillsPage->Controls->Add(this->checkBox4);
-			this->skillsPage->Controls->Add(this->checkBox3);
-			this->skillsPage->Controls->Add(this->checkBox2);
-			this->skillsPage->Controls->Add(this->checkBox1);
+			this->skillsPage->Controls->Add(this->thieveryTrainedCheckBox);
+			this->skillsPage->Controls->Add(this->streetwiseTrainedCheckBox);
+			this->skillsPage->Controls->Add(this->stealthTrainedCheckBox);
+			this->skillsPage->Controls->Add(this->religionTrainedCheckBox);
+			this->skillsPage->Controls->Add(this->perceptionTrainedCheckBox);
+			this->skillsPage->Controls->Add(this->natureTrainedCheckBox);
+			this->skillsPage->Controls->Add(this->intimidateTrainedCheckBox);
+			this->skillsPage->Controls->Add(this->insightTrainedCheckBox);
+			this->skillsPage->Controls->Add(this->historyTrainedCheckBox);
+			this->skillsPage->Controls->Add(this->healTrainedCheckBox);
+			this->skillsPage->Controls->Add(this->enduranceTrainedCheckBox);
+			this->skillsPage->Controls->Add(this->dungeoneeringTrainedCheckBox);
+			this->skillsPage->Controls->Add(this->diplomacyTrainedCheckBox);
+			this->skillsPage->Controls->Add(this->bluffTrainedCheckBox);
+			this->skillsPage->Controls->Add(this->athleticsTrainedCheckBox);
+			this->skillsPage->Controls->Add(this->arcanaTrainedCheckBox);
+			this->skillsPage->Controls->Add(this->acrobaticsTrainedCheckBox);
 			this->skillsPage->Controls->Add(this->label34);
 			this->skillsPage->Controls->Add(this->label37);
 			this->skillsPage->Controls->Add(this->label36);
@@ -1370,7 +1415,7 @@ public: System::Windows::Forms::Label^  label39;
 			this->skillsPage->Controls->Add(this->label22);
 			this->skillsPage->Location = System::Drawing::Point(4, 22);
 			this->skillsPage->Name = L"skillsPage";
-			this->skillsPage->Size = System::Drawing::Size(476, 535);
+			this->skillsPage->Size = System::Drawing::Size(654, 535);
 			this->skillsPage->TabIndex = 2;
 			this->skillsPage->Text = L"Skills";
 			this->skillsPage->UseVisualStyleBackColor = true;
@@ -1384,160 +1429,160 @@ public: System::Windows::Forms::Label^  label39;
 			this->skillsInfoBox->TabIndex = 80;
 			this->skillsInfoBox->Text = L"";
 			// 
-			// checkBox17
+			// thieveryTrainedCheckBox
 			// 
-			this->checkBox17->AutoSize = true;
-			this->checkBox17->Location = System::Drawing::Point(409, 407);
-			this->checkBox17->Name = L"checkBox17";
-			this->checkBox17->Size = System::Drawing::Size(15, 14);
-			this->checkBox17->TabIndex = 79;
-			this->checkBox17->UseVisualStyleBackColor = true;
-			this->checkBox17->CheckedChanged += gcnew System::EventHandler(this, &MyForm::checkBox16_CheckedChanged);
+			this->thieveryTrainedCheckBox->AutoSize = true;
+			this->thieveryTrainedCheckBox->Location = System::Drawing::Point(409, 407);
+			this->thieveryTrainedCheckBox->Name = L"thieveryTrainedCheckBox";
+			this->thieveryTrainedCheckBox->Size = System::Drawing::Size(15, 14);
+			this->thieveryTrainedCheckBox->TabIndex = 79;
+			this->thieveryTrainedCheckBox->UseVisualStyleBackColor = true;
+			this->thieveryTrainedCheckBox->CheckedChanged += gcnew System::EventHandler(this, &MyForm::checkBox16_CheckedChanged);
 			// 
-			// checkBox16
+			// streetwiseTrainedCheckBox
 			// 
-			this->checkBox16->AutoSize = true;
-			this->checkBox16->Location = System::Drawing::Point(410, 366);
-			this->checkBox16->Name = L"checkBox16";
-			this->checkBox16->Size = System::Drawing::Size(15, 14);
-			this->checkBox16->TabIndex = 79;
-			this->checkBox16->UseVisualStyleBackColor = true;
-			this->checkBox16->CheckedChanged += gcnew System::EventHandler(this, &MyForm::checkBox16_CheckedChanged);
+			this->streetwiseTrainedCheckBox->AutoSize = true;
+			this->streetwiseTrainedCheckBox->Location = System::Drawing::Point(410, 366);
+			this->streetwiseTrainedCheckBox->Name = L"streetwiseTrainedCheckBox";
+			this->streetwiseTrainedCheckBox->Size = System::Drawing::Size(15, 14);
+			this->streetwiseTrainedCheckBox->TabIndex = 79;
+			this->streetwiseTrainedCheckBox->UseVisualStyleBackColor = true;
+			this->streetwiseTrainedCheckBox->CheckedChanged += gcnew System::EventHandler(this, &MyForm::checkBox16_CheckedChanged);
 			// 
-			// checkBox15
+			// stealthTrainedCheckBox
 			// 
-			this->checkBox15->AutoSize = true;
-			this->checkBox15->Location = System::Drawing::Point(410, 323);
-			this->checkBox15->Name = L"checkBox15";
-			this->checkBox15->Size = System::Drawing::Size(15, 14);
-			this->checkBox15->TabIndex = 79;
-			this->checkBox15->UseVisualStyleBackColor = true;
+			this->stealthTrainedCheckBox->AutoSize = true;
+			this->stealthTrainedCheckBox->Location = System::Drawing::Point(410, 323);
+			this->stealthTrainedCheckBox->Name = L"stealthTrainedCheckBox";
+			this->stealthTrainedCheckBox->Size = System::Drawing::Size(15, 14);
+			this->stealthTrainedCheckBox->TabIndex = 79;
+			this->stealthTrainedCheckBox->UseVisualStyleBackColor = true;
 			// 
-			// checkBox14
+			// religionTrainedCheckBox
 			// 
-			this->checkBox14->AutoSize = true;
-			this->checkBox14->Location = System::Drawing::Point(410, 282);
-			this->checkBox14->Name = L"checkBox14";
-			this->checkBox14->Size = System::Drawing::Size(15, 14);
-			this->checkBox14->TabIndex = 79;
-			this->checkBox14->UseVisualStyleBackColor = true;
+			this->religionTrainedCheckBox->AutoSize = true;
+			this->religionTrainedCheckBox->Location = System::Drawing::Point(410, 282);
+			this->religionTrainedCheckBox->Name = L"religionTrainedCheckBox";
+			this->religionTrainedCheckBox->Size = System::Drawing::Size(15, 14);
+			this->religionTrainedCheckBox->TabIndex = 79;
+			this->religionTrainedCheckBox->UseVisualStyleBackColor = true;
 			// 
-			// checkBox13
+			// perceptionTrainedCheckBox
 			// 
-			this->checkBox13->AutoSize = true;
-			this->checkBox13->Location = System::Drawing::Point(410, 241);
-			this->checkBox13->Name = L"checkBox13";
-			this->checkBox13->Size = System::Drawing::Size(15, 14);
-			this->checkBox13->TabIndex = 79;
-			this->checkBox13->UseVisualStyleBackColor = true;
+			this->perceptionTrainedCheckBox->AutoSize = true;
+			this->perceptionTrainedCheckBox->Location = System::Drawing::Point(410, 241);
+			this->perceptionTrainedCheckBox->Name = L"perceptionTrainedCheckBox";
+			this->perceptionTrainedCheckBox->Size = System::Drawing::Size(15, 14);
+			this->perceptionTrainedCheckBox->TabIndex = 79;
+			this->perceptionTrainedCheckBox->UseVisualStyleBackColor = true;
 			// 
-			// checkBox12
+			// natureTrainedCheckBox
 			// 
-			this->checkBox12->AutoSize = true;
-			this->checkBox12->Location = System::Drawing::Point(410, 201);
-			this->checkBox12->Name = L"checkBox12";
-			this->checkBox12->Size = System::Drawing::Size(15, 14);
-			this->checkBox12->TabIndex = 79;
-			this->checkBox12->UseVisualStyleBackColor = true;
+			this->natureTrainedCheckBox->AutoSize = true;
+			this->natureTrainedCheckBox->Location = System::Drawing::Point(410, 201);
+			this->natureTrainedCheckBox->Name = L"natureTrainedCheckBox";
+			this->natureTrainedCheckBox->Size = System::Drawing::Size(15, 14);
+			this->natureTrainedCheckBox->TabIndex = 79;
+			this->natureTrainedCheckBox->UseVisualStyleBackColor = true;
 			// 
-			// checkBox11
+			// intimidateTrainedCheckBox
 			// 
-			this->checkBox11->AutoSize = true;
-			this->checkBox11->Location = System::Drawing::Point(410, 161);
-			this->checkBox11->Name = L"checkBox11";
-			this->checkBox11->Size = System::Drawing::Size(15, 14);
-			this->checkBox11->TabIndex = 79;
-			this->checkBox11->UseVisualStyleBackColor = true;
+			this->intimidateTrainedCheckBox->AutoSize = true;
+			this->intimidateTrainedCheckBox->Location = System::Drawing::Point(410, 161);
+			this->intimidateTrainedCheckBox->Name = L"intimidateTrainedCheckBox";
+			this->intimidateTrainedCheckBox->Size = System::Drawing::Size(15, 14);
+			this->intimidateTrainedCheckBox->TabIndex = 79;
+			this->intimidateTrainedCheckBox->UseVisualStyleBackColor = true;
 			// 
-			// checkBox10
+			// insightTrainedCheckBox
 			// 
-			this->checkBox10->AutoSize = true;
-			this->checkBox10->Location = System::Drawing::Point(410, 120);
-			this->checkBox10->Name = L"checkBox10";
-			this->checkBox10->Size = System::Drawing::Size(15, 14);
-			this->checkBox10->TabIndex = 79;
-			this->checkBox10->UseVisualStyleBackColor = true;
+			this->insightTrainedCheckBox->AutoSize = true;
+			this->insightTrainedCheckBox->Location = System::Drawing::Point(410, 120);
+			this->insightTrainedCheckBox->Name = L"insightTrainedCheckBox";
+			this->insightTrainedCheckBox->Size = System::Drawing::Size(15, 14);
+			this->insightTrainedCheckBox->TabIndex = 79;
+			this->insightTrainedCheckBox->UseVisualStyleBackColor = true;
 			// 
-			// checkBox9
+			// historyTrainedCheckBox
 			// 
-			this->checkBox9->AutoSize = true;
-			this->checkBox9->Location = System::Drawing::Point(146, 450);
-			this->checkBox9->Name = L"checkBox9";
-			this->checkBox9->Size = System::Drawing::Size(15, 14);
-			this->checkBox9->TabIndex = 79;
-			this->checkBox9->UseVisualStyleBackColor = true;
+			this->historyTrainedCheckBox->AutoSize = true;
+			this->historyTrainedCheckBox->Location = System::Drawing::Point(146, 450);
+			this->historyTrainedCheckBox->Name = L"historyTrainedCheckBox";
+			this->historyTrainedCheckBox->Size = System::Drawing::Size(15, 14);
+			this->historyTrainedCheckBox->TabIndex = 79;
+			this->historyTrainedCheckBox->UseVisualStyleBackColor = true;
 			// 
-			// checkBox8
+			// healTrainedCheckBox
 			// 
-			this->checkBox8->AutoSize = true;
-			this->checkBox8->Location = System::Drawing::Point(146, 407);
-			this->checkBox8->Name = L"checkBox8";
-			this->checkBox8->Size = System::Drawing::Size(15, 14);
-			this->checkBox8->TabIndex = 79;
-			this->checkBox8->UseVisualStyleBackColor = true;
+			this->healTrainedCheckBox->AutoSize = true;
+			this->healTrainedCheckBox->Location = System::Drawing::Point(146, 407);
+			this->healTrainedCheckBox->Name = L"healTrainedCheckBox";
+			this->healTrainedCheckBox->Size = System::Drawing::Size(15, 14);
+			this->healTrainedCheckBox->TabIndex = 79;
+			this->healTrainedCheckBox->UseVisualStyleBackColor = true;
 			// 
-			// checkBox7
+			// enduranceTrainedCheckBox
 			// 
-			this->checkBox7->AutoSize = true;
-			this->checkBox7->Location = System::Drawing::Point(146, 368);
-			this->checkBox7->Name = L"checkBox7";
-			this->checkBox7->Size = System::Drawing::Size(15, 14);
-			this->checkBox7->TabIndex = 79;
-			this->checkBox7->UseVisualStyleBackColor = true;
+			this->enduranceTrainedCheckBox->AutoSize = true;
+			this->enduranceTrainedCheckBox->Location = System::Drawing::Point(146, 368);
+			this->enduranceTrainedCheckBox->Name = L"enduranceTrainedCheckBox";
+			this->enduranceTrainedCheckBox->Size = System::Drawing::Size(15, 14);
+			this->enduranceTrainedCheckBox->TabIndex = 79;
+			this->enduranceTrainedCheckBox->UseVisualStyleBackColor = true;
 			// 
-			// checkBox6
+			// dungeoneeringTrainedCheckBox
 			// 
-			this->checkBox6->AutoSize = true;
-			this->checkBox6->Location = System::Drawing::Point(146, 326);
-			this->checkBox6->Name = L"checkBox6";
-			this->checkBox6->Size = System::Drawing::Size(15, 14);
-			this->checkBox6->TabIndex = 79;
-			this->checkBox6->UseVisualStyleBackColor = true;
+			this->dungeoneeringTrainedCheckBox->AutoSize = true;
+			this->dungeoneeringTrainedCheckBox->Location = System::Drawing::Point(146, 326);
+			this->dungeoneeringTrainedCheckBox->Name = L"dungeoneeringTrainedCheckBox";
+			this->dungeoneeringTrainedCheckBox->Size = System::Drawing::Size(15, 14);
+			this->dungeoneeringTrainedCheckBox->TabIndex = 79;
+			this->dungeoneeringTrainedCheckBox->UseVisualStyleBackColor = true;
 			// 
-			// checkBox5
+			// diplomacyTrainedCheckBox
 			// 
-			this->checkBox5->AutoSize = true;
-			this->checkBox5->Location = System::Drawing::Point(146, 285);
-			this->checkBox5->Name = L"checkBox5";
-			this->checkBox5->Size = System::Drawing::Size(15, 14);
-			this->checkBox5->TabIndex = 79;
-			this->checkBox5->UseVisualStyleBackColor = true;
+			this->diplomacyTrainedCheckBox->AutoSize = true;
+			this->diplomacyTrainedCheckBox->Location = System::Drawing::Point(146, 285);
+			this->diplomacyTrainedCheckBox->Name = L"diplomacyTrainedCheckBox";
+			this->diplomacyTrainedCheckBox->Size = System::Drawing::Size(15, 14);
+			this->diplomacyTrainedCheckBox->TabIndex = 79;
+			this->diplomacyTrainedCheckBox->UseVisualStyleBackColor = true;
 			// 
-			// checkBox4
+			// bluffTrainedCheckBox
 			// 
-			this->checkBox4->AutoSize = true;
-			this->checkBox4->Location = System::Drawing::Point(146, 242);
-			this->checkBox4->Name = L"checkBox4";
-			this->checkBox4->Size = System::Drawing::Size(15, 14);
-			this->checkBox4->TabIndex = 79;
-			this->checkBox4->UseVisualStyleBackColor = true;
+			this->bluffTrainedCheckBox->AutoSize = true;
+			this->bluffTrainedCheckBox->Location = System::Drawing::Point(146, 242);
+			this->bluffTrainedCheckBox->Name = L"bluffTrainedCheckBox";
+			this->bluffTrainedCheckBox->Size = System::Drawing::Size(15, 14);
+			this->bluffTrainedCheckBox->TabIndex = 79;
+			this->bluffTrainedCheckBox->UseVisualStyleBackColor = true;
 			// 
-			// checkBox3
+			// athleticsTrainedCheckBox
 			// 
-			this->checkBox3->AutoSize = true;
-			this->checkBox3->Location = System::Drawing::Point(146, 201);
-			this->checkBox3->Name = L"checkBox3";
-			this->checkBox3->Size = System::Drawing::Size(15, 14);
-			this->checkBox3->TabIndex = 79;
-			this->checkBox3->UseVisualStyleBackColor = true;
+			this->athleticsTrainedCheckBox->AutoSize = true;
+			this->athleticsTrainedCheckBox->Location = System::Drawing::Point(146, 201);
+			this->athleticsTrainedCheckBox->Name = L"athleticsTrainedCheckBox";
+			this->athleticsTrainedCheckBox->Size = System::Drawing::Size(15, 14);
+			this->athleticsTrainedCheckBox->TabIndex = 79;
+			this->athleticsTrainedCheckBox->UseVisualStyleBackColor = true;
 			// 
-			// checkBox2
+			// arcanaTrainedCheckBox
 			// 
-			this->checkBox2->AutoSize = true;
-			this->checkBox2->Location = System::Drawing::Point(146, 161);
-			this->checkBox2->Name = L"checkBox2";
-			this->checkBox2->Size = System::Drawing::Size(15, 14);
-			this->checkBox2->TabIndex = 79;
-			this->checkBox2->UseVisualStyleBackColor = true;
+			this->arcanaTrainedCheckBox->AutoSize = true;
+			this->arcanaTrainedCheckBox->Location = System::Drawing::Point(146, 161);
+			this->arcanaTrainedCheckBox->Name = L"arcanaTrainedCheckBox";
+			this->arcanaTrainedCheckBox->Size = System::Drawing::Size(15, 14);
+			this->arcanaTrainedCheckBox->TabIndex = 79;
+			this->arcanaTrainedCheckBox->UseVisualStyleBackColor = true;
 			// 
-			// checkBox1
+			// acrobaticsTrainedCheckBox
 			// 
-			this->checkBox1->AutoSize = true;
-			this->checkBox1->Location = System::Drawing::Point(146, 120);
-			this->checkBox1->Name = L"checkBox1";
-			this->checkBox1->Size = System::Drawing::Size(15, 14);
-			this->checkBox1->TabIndex = 79;
-			this->checkBox1->UseVisualStyleBackColor = true;
+			this->acrobaticsTrainedCheckBox->AutoSize = true;
+			this->acrobaticsTrainedCheckBox->Location = System::Drawing::Point(146, 120);
+			this->acrobaticsTrainedCheckBox->Name = L"acrobaticsTrainedCheckBox";
+			this->acrobaticsTrainedCheckBox->Size = System::Drawing::Size(15, 14);
+			this->acrobaticsTrainedCheckBox->TabIndex = 79;
+			this->acrobaticsTrainedCheckBox->UseVisualStyleBackColor = true;
 			// 
 			// label34
 			// 
@@ -1991,7 +2036,7 @@ public: System::Windows::Forms::Label^  label39;
 			this->featsPage->Location = System::Drawing::Point(4, 22);
 			this->featsPage->Name = L"featsPage";
 			this->featsPage->Padding = System::Windows::Forms::Padding(3);
-			this->featsPage->Size = System::Drawing::Size(476, 535);
+			this->featsPage->Size = System::Drawing::Size(654, 535);
 			this->featsPage->TabIndex = 3;
 			this->featsPage->Text = L"Feats";
 			this->featsPage->UseVisualStyleBackColor = true;
@@ -2034,7 +2079,7 @@ public: System::Windows::Forms::Label^  label39;
 			this->powersTab->Location = System::Drawing::Point(4, 22);
 			this->powersTab->Name = L"powersTab";
 			this->powersTab->Padding = System::Windows::Forms::Padding(3);
-			this->powersTab->Size = System::Drawing::Size(476, 535);
+			this->powersTab->Size = System::Drawing::Size(654, 535);
 			this->powersTab->TabIndex = 4;
 			this->powersTab->Text = L"Powers";
 			this->powersTab->UseVisualStyleBackColor = true;
@@ -2097,25 +2142,6 @@ public: System::Windows::Forms::Label^  label39;
 			this->exitToolStripMenuItem->Text = L"Exit";
 			this->exitToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::exitToolStripMenuItem_Click);
 			// 
-			// label39
-			// 
-			this->label39->AutoSize = true;
-			this->label39->Location = System::Drawing::Point(416, 163);
-			this->label39->Name = L"label39";
-			this->label39->Size = System::Drawing::Size(89, 13);
-			this->label39->TabIndex = 0;
-			this->label39->Text = L"Race Description";
-			this->label39->Click += gcnew System::EventHandler(this, &MyForm::label4_Click);
-			// 
-			// richTextBox2
-			// 
-			this->richTextBox2->Location = System::Drawing::Point(421, 183);
-			this->richTextBox2->Name = L"richTextBox2";
-			this->richTextBox2->ReadOnly = true;
-			this->richTextBox2->Size = System::Drawing::Size(226, 334);
-			this->richTextBox2->TabIndex = 4;
-			this->richTextBox2->Text = L"";
-			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -2154,7 +2180,7 @@ public: System::Windows::Forms::Label^  label39;
 	private: System::Void classDropDown_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e) {
 		std::string classinput = context.marshal_as<std::string>(classDropDown->Text);
 		std::string classoutput = classs(classinput);
-		definitionTextBox->Text = context.marshal_as<System::String ^>(classoutput);
+		classDescriptionTextBox->Text = context.marshal_as<System::String ^>(classoutput);
 	}
 	private: System::Void raceDropDown_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e) {
 	}
@@ -2250,6 +2276,7 @@ public: System::Windows::Forms::Label^  label39;
 			charFinalBox->Text = context.marshal_as<System::String ^>(std::to_string(a));
 			charModBox->Text = context.marshal_as<System::String ^>(std::to_string(calcMod(a)));
 		}
+		//TODO: When stats are calculated, populate the skills and HP sections.
 	}
 	};
 }

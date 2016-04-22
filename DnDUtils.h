@@ -14,10 +14,12 @@ std::string features[3][88];
 std::string races[10][9];
 std::string skills[34];
 bool initized_classes = false;
-std::string classes[NUMOFCLASSES][NUMOFINFOLINES];
+std::string classes[NUMOFCLASSES][NUMOFINFOLINES]; 
 std::string powers[102][7];
 
 std::ifstream featsFile, raceFile, skillFile, classFile, powerFile;
+
+//TODO: Make a function similar to "classs" but for races
 
 std::string classs(std::string input)
 {
@@ -25,21 +27,19 @@ std::string classs(std::string input)
 	{
 		classFile.open("Classes.txt");
 		std::string line;
-		for (int current_class = 0; current_class < NUMOFCLASSES; current_class++) {		//keeps track of which class
-			for (int current_info = 0; current_info < NUMOFINFOLINES; current_info++) {	//places the info for each class at the y-coordinate
+		for (int current_class = 0; current_class < NUMOFCLASSES; current_class++) {
+			for (int current_info = 0; current_info < NUMOFINFOLINES; current_info++) {
 				getline(classFile, line);
 
 				classes[current_class][current_info] = line;
-				std::cout << line;
 			}
 		}
 		initized_classes = true;
 	}
 	int index = 0;
-	std::string input2 = input;
-	for (int y = 0; y < NUMOFCLASSES; y++) {
-		if (classes[y][0] == input2) {
-			index = y;
+	for (int current_class = 0; current_class < NUMOFCLASSES; current_class++) {
+		if (classes[current_class][0] == input) {
+			index = current_class;
 			break;
 		}
 	}
@@ -56,7 +56,6 @@ std::string classs(std::string input)
 	output.append("Trained Skills: " + classes[index][8] + "\n");
 	output.append("Class Skills: " + classes[index][9] + "\n");
 	output.append("Class Features: " + classes[index][10] + "\n");
-	output.append("Short Description: " + classes[index][11] + "\n");
 	classFile.close();
 	return output;
 }
