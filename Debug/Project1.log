@@ -1,4 +1,4 @@
 ﻿  GUI.cpp
 GUI.cpp(10): warning C4829: Possibly incorrect parameters to function main. Consider 'int main(Platform::Array<Platform::String^>^ argv)'
-c:\users\caleb_000\source\repos\d-d\myform.h(2234): warning C4715: 'DnDGUI::MyForm::calcMod': not all control paths return a value
+c:\users\caleb_000\source\repos\d-d\dndutils.h(79): warning C4715: 'calcMod': not all control paths return a value
   Project1.vcxproj -> C:\Users\caleb_000\Source\Repos\D-D\Debug\D-D.exe

@@ -59,3 +59,21 @@ std::string classs(std::string input)
 	classFile.close();
 	return output;
 }
+
+int calcMod(int a)
+{
+	if (a == 8 || a == 9)
+		return -1;
+	else if (a == 10 || a == 11)
+		return 0;
+	else if (a == 12 || a == 13)
+		return 1;
+	else if (a == 14 || a == 15)
+		return 2;
+	else if (a == 16 || a == 17)
+		return 3;
+	else if (a == 18 || a == 19)
+		return 4;
+	else if (a == 20 || a == 21)
+		return 5;
+}

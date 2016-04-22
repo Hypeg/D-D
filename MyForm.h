@@ -2178,9 +2178,9 @@ public: System::Windows::Forms::Label^  label39;
 	private: System::Void textBox1_TextChanged(System::Object^  sender, System::EventArgs^  e) {
 	}
 	private: System::Void classDropDown_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e) {
-		std::string classinput = context.marshal_as<std::string>(classDropDown->Text);
-		std::string classoutput = classs(classinput);
-		classDescriptionTextBox->Text = context.marshal_as<System::String ^>(classoutput);
+		//line below might be a bit confusing... it grabs the managed string from classDropDown, turns it into a std string, throws it at the classs function
+		//and then turns the returned std string into a managed string and puts it in the classDescriptionBox
+		classDescriptionTextBox->Text = context.marshal_as<System::String ^>(classs(context.marshal_as<std::string>(classDropDown->Text)));
 	}
 	private: System::Void raceDropDown_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e) {
 	}
@@ -2215,66 +2215,44 @@ public: System::Windows::Forms::Label^  label39;
 	}
 	private: System::Void strModBox_TextChanged(System::Object^  sender, System::EventArgs^  e) {
 	}
-			 int calcMod(int a)
-			 {
-				 if (a == 8 || a == 9)
-					 return -1;
-				 else if (a == 10 || a == 11)
-					 return 0;
-				 else if (a == 12 || a == 13)
-					 return 1;
-				 else if (a == 14 || a == 15)
-					 return 2;
-				 else if (a == 16 || a == 17)
-					 return 3;
-				 else if (a == 18 || a == 19)
-					 return 4;
-				 else if (a == 20 || a == 21)
-					 return 5;
-			 }
+			 
 	private: System::Void calculateButton_Click(System::Object^  sender, System::EventArgs^  e) {
-		int a; int b;
+		int leftbox; int rightbox;
 		if (strDropDown->Text != "" && strBonusBox->Text != "") {
-			b = std::stoi(context.marshal_as<std::string>(strBonusBox->Text));
-			a = std::stoi(context.marshal_as<std::string>(strDropDown->Text));
-			a = a + b;
-			strFinalBox->Text = context.marshal_as<System::String ^>(std::to_string(a));
-			strModBox->Text = context.marshal_as<System::String ^>(std::to_string(calcMod(a)));
+			rightbox = std::stoi(context.marshal_as<std::string>(strBonusBox->Text));
+			leftbox = std::stoi(context.marshal_as<std::string>(strDropDown->Text));
+			strFinalBox->Text = context.marshal_as<System::String ^>(std::to_string(leftbox+rightbox));
+			strModBox->Text = context.marshal_as<System::String ^>(std::to_string(calcMod(leftbox + rightbox)));
 		}
 		if (constDropDown->Text != "" && constBonusBox->Text != "") {
-			b = std::stoi(context.marshal_as<std::string>(constBonusBox->Text));
-			a = std::stoi(context.marshal_as<std::string>(constDropDown->Text));
-			a = a + b;
-			constFinalBox->Text = context.marshal_as<System::String ^>(std::to_string(a));
-			constModBox->Text = context.marshal_as<System::String ^>(std::to_string(calcMod(a)));
+			rightbox = std::stoi(context.marshal_as<std::string>(constBonusBox->Text));
+			leftbox = std::stoi(context.marshal_as<std::string>(constDropDown->Text));
+			constFinalBox->Text = context.marshal_as<System::String ^>(std::to_string(leftbox + rightbox));
+			constModBox->Text = context.marshal_as<System::String ^>(std::to_string(calcMod(leftbox + rightbox)));
 		}
 		if (dexDropDown->Text != "" && dexBonusBox->Text != "") {
-			b = std::stoi(context.marshal_as<std::string>(dexBonusBox->Text));
-			a = std::stoi(context.marshal_as<std::string>(dexDropDown->Text));
-			a = a + b;
-			dexFinalBox->Text = context.marshal_as<System::String ^>(std::to_string(a));
-			dexModBox->Text = context.marshal_as<System::String ^>(std::to_string(calcMod(a)));
+			rightbox = std::stoi(context.marshal_as<std::string>(dexBonusBox->Text));
+			leftbox = std::stoi(context.marshal_as<std::string>(dexDropDown->Text));
+			dexFinalBox->Text = context.marshal_as<System::String ^>(std::to_string(leftbox + rightbox));
+			dexModBox->Text = context.marshal_as<System::String ^>(std::to_string(calcMod(leftbox + rightbox)));
 		}
 		if (intelDropDown->Text != "" && intelBonusBox->Text != "") {
-			b = std::stoi(context.marshal_as<std::string>(intelBonusBox->Text));
-			a = std::stoi(context.marshal_as<std::string>(intelDropDown->Text));
-			a = a + b;
-			intelFinalBox->Text = context.marshal_as<System::String ^>(std::to_string(a));
-			intelModBox->Text = context.marshal_as<System::String ^>(std::to_string(calcMod(a)));
+			rightbox = std::stoi(context.marshal_as<std::string>(intelBonusBox->Text));
+			leftbox = std::stoi(context.marshal_as<std::string>(intelDropDown->Text));
+			intelFinalBox->Text = context.marshal_as<System::String ^>(std::to_string(leftbox + rightbox));
+			intelModBox->Text = context.marshal_as<System::String ^>(std::to_string(calcMod(leftbox + rightbox)));
 		}
 		if (wisDropDown->Text != "" && wisBonusBox->Text != "") {
-			b = std::stoi(context.marshal_as<std::string>(wisBonusBox->Text));
-			a = std::stoi(context.marshal_as<std::string>(wisDropDown->Text));
-			a = a + b;
-			wisFinalBox->Text = context.marshal_as<System::String ^>(std::to_string(a));
-			wisModBox->Text = context.marshal_as<System::String ^>(std::to_string(calcMod(a)));
+			rightbox = std::stoi(context.marshal_as<std::string>(wisBonusBox->Text));
+			leftbox = std::stoi(context.marshal_as<std::string>(wisDropDown->Text));
+			wisFinalBox->Text = context.marshal_as<System::String ^>(std::to_string(leftbox + rightbox));
+			wisModBox->Text = context.marshal_as<System::String ^>(std::to_string(calcMod(leftbox + rightbox)));
 		}
 		if (charDropDown->Text != "" && charBonusBox->Text != "") {
-			b = std::stoi(context.marshal_as<std::string>(charBonusBox->Text));
-			a = std::stoi(context.marshal_as<std::string>(charDropDown->Text));
-			a = a + b;
-			charFinalBox->Text = context.marshal_as<System::String ^>(std::to_string(a));
-			charModBox->Text = context.marshal_as<System::String ^>(std::to_string(calcMod(a)));
+			rightbox = std::stoi(context.marshal_as<std::string>(charBonusBox->Text));
+			leftbox = std::stoi(context.marshal_as<std::string>(charDropDown->Text));
+			charFinalBox->Text = context.marshal_as<System::String ^>(std::to_string(leftbox + rightbox));
+			charModBox->Text = context.marshal_as<System::String ^>(std::to_string(calcMod(leftbox + rightbox)));
 		}
 		//TODO: When stats are calculated, populate the skills and HP sections.
 	}
