@@ -368,6 +368,9 @@ namespace DnDGUI {
 	private: System::Windows::Forms::TabPage^  powersTab;
 	private: System::Windows::Forms::Label^  label35;
 	private: System::Windows::Forms::Label^  label4;
+public: System::Windows::Forms::RichTextBox^  richTextBox2;
+private:
+public: System::Windows::Forms::Label^  label39;
 
 	private:
 	public:
@@ -545,6 +548,8 @@ namespace DnDGUI {
 			this->openToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->saveToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->exitToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->label39 = (gcnew System::Windows::Forms::Label());
+			this->richTextBox2 = (gcnew System::Windows::Forms::RichTextBox());
 			this->tabControl1->SuspendLayout();
 			this->generalPage->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox))->BeginInit();
@@ -565,12 +570,13 @@ namespace DnDGUI {
 			this->tabControl1->Location = System::Drawing::Point(1, 27);
 			this->tabControl1->Name = L"tabControl1";
 			this->tabControl1->SelectedIndex = 0;
-			this->tabControl1->Size = System::Drawing::Size(484, 561);
+			this->tabControl1->Size = System::Drawing::Size(662, 561);
 			this->tabControl1->TabIndex = 0;
 			// 
 			// generalPage
 			// 
 			this->generalPage->Controls->Add(this->pictureBox);
+			this->generalPage->Controls->Add(this->richTextBox2);
 			this->generalPage->Controls->Add(this->definitionTextBox);
 			this->generalPage->Controls->Add(this->comboBox4);
 			this->generalPage->Controls->Add(this->comboBox3);
@@ -588,6 +594,7 @@ namespace DnDGUI {
 			this->generalPage->Controls->Add(this->speedTextBox);
 			this->generalPage->Controls->Add(this->textBox2);
 			this->generalPage->Controls->Add(this->ageTextBox);
+			this->generalPage->Controls->Add(this->label39);
 			this->generalPage->Controls->Add(this->nameTextBox);
 			this->generalPage->Controls->Add(this->label38);
 			this->generalPage->Controls->Add(this->dietyBox);
@@ -602,7 +609,7 @@ namespace DnDGUI {
 			this->generalPage->Location = System::Drawing::Point(4, 22);
 			this->generalPage->Name = L"generalPage";
 			this->generalPage->Padding = System::Windows::Forms::Padding(3);
-			this->generalPage->Size = System::Drawing::Size(476, 535);
+			this->generalPage->Size = System::Drawing::Size(654, 535);
 			this->generalPage->TabIndex = 0;
 			this->generalPage->Text = L"General";
 			this->generalPage->UseVisualStyleBackColor = true;
@@ -612,7 +619,7 @@ namespace DnDGUI {
 			// 
 			this->pictureBox->Location = System::Drawing::Point(318, 7);
 			this->pictureBox->Name = L"pictureBox";
-			this->pictureBox->Size = System::Drawing::Size(151, 158);
+			this->pictureBox->Size = System::Drawing::Size(186, 153);
 			this->pictureBox->TabIndex = 5;
 			this->pictureBox->TabStop = false;
 			// 
@@ -621,7 +628,7 @@ namespace DnDGUI {
 			this->definitionTextBox->Location = System::Drawing::Point(179, 183);
 			this->definitionTextBox->Name = L"definitionTextBox";
 			this->definitionTextBox->ReadOnly = true;
-			this->definitionTextBox->Size = System::Drawing::Size(290, 222);
+			this->definitionTextBox->Size = System::Drawing::Size(226, 334);
 			this->definitionTextBox->TabIndex = 4;
 			this->definitionTextBox->Text = L"";
 			// 
@@ -814,9 +821,9 @@ namespace DnDGUI {
 			this->label38->AutoSize = true;
 			this->label38->Location = System::Drawing::Point(174, 163);
 			this->label38->Name = L"label38";
-			this->label38->Size = System::Drawing::Size(51, 13);
+			this->label38->Size = System::Drawing::Size(88, 13);
 			this->label38->TabIndex = 0;
-			this->label38->Text = L"Definition";
+			this->label38->Text = L"Class Description";
 			this->label38->Click += gcnew System::EventHandler(this, &MyForm::label4_Click);
 			// 
 			// dietyBox
@@ -2057,7 +2064,7 @@ namespace DnDGUI {
 			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->toolStripMenuItem1 });
 			this->menuStrip1->Location = System::Drawing::Point(0, 0);
 			this->menuStrip1->Name = L"menuStrip1";
-			this->menuStrip1->Size = System::Drawing::Size(487, 24);
+			this->menuStrip1->Size = System::Drawing::Size(666, 24);
 			this->menuStrip1->TabIndex = 1;
 			this->menuStrip1->Text = L"menuStrip1";
 			// 
@@ -2090,11 +2097,30 @@ namespace DnDGUI {
 			this->exitToolStripMenuItem->Text = L"Exit";
 			this->exitToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::exitToolStripMenuItem_Click);
 			// 
+			// label39
+			// 
+			this->label39->AutoSize = true;
+			this->label39->Location = System::Drawing::Point(416, 163);
+			this->label39->Name = L"label39";
+			this->label39->Size = System::Drawing::Size(89, 13);
+			this->label39->TabIndex = 0;
+			this->label39->Text = L"Race Description";
+			this->label39->Click += gcnew System::EventHandler(this, &MyForm::label4_Click);
+			// 
+			// richTextBox2
+			// 
+			this->richTextBox2->Location = System::Drawing::Point(421, 183);
+			this->richTextBox2->Name = L"richTextBox2";
+			this->richTextBox2->ReadOnly = true;
+			this->richTextBox2->Size = System::Drawing::Size(226, 334);
+			this->richTextBox2->TabIndex = 4;
+			this->richTextBox2->Text = L"";
+			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(487, 586);
+			this->ClientSize = System::Drawing::Size(666, 586);
 			this->Controls->Add(this->tabControl1);
 			this->Controls->Add(this->menuStrip1);
 			this->MainMenuStrip = this->menuStrip1;

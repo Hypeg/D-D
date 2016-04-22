@@ -6,7 +6,7 @@ will +2
 con score+12
 con modifier+ 7
 religion
-Choose three of the class skills: Arcana (int) ,Diplomacy(cha), Heal(wis), History(int), Insight(wis)
+Choose 3 of the class skills: Arcana (int) ,Diplomacy(cha), Heal(wis), History(int), Insight(wis)
 Channel divinity,Healer’s Lore,Healing word,Ritual casting
 A holy and wise battle priest
 Fighter
@@ -16,8 +16,8 @@ cloth, leather, hide, chainmail,scale,light and heavy shield
 Fortitude +2
 con score + 15
 con modifier + 9
-none
-Choose three of the class skills:Athletics(Str),Streetwise(cha),Heal(wis),Endurance(Con),Intimidate(Cha)
+none 
+Choose 3 of the class skills:Athletics(Str),Streetwise(cha),Heal(wis),Endurance(Con),Intimidate(Cha)
 Combat Challenge,Combat Superiority,Fighter Weapon Talent
 A skilled combatant in a fight
 Paladin
@@ -28,7 +28,7 @@ Fortitude+1 ,Reflex+1,will+1
 con score + 15
 con modifier + 10
 religion
-Choose three of the class skills: Endurance(Con),Intimidate(Cha),Diplomacy(cha),Heal(wis),History(int),Insight(wis)
+Choose 3 of the class skills: Endurance(Con),Intimidate(Cha),Diplomacy(cha),Heal(wis),History(int),Insight(wis)
 Divine Challenge,Channel Divinity,Lay on Hands
 An armored champion of god
 Ranger
@@ -42,7 +42,7 @@ dungeoneering or nature
 Choose four of the class skills: Acrobatics(Dex),Athletics(Str),Dungeoneering(wis),Heal(wis),Endurance(Con),Nature(Wis),Perception(Wis),Stealth(Dex)
 Fighting Style,Hunter’s Quarry,Prime shot
 A strong and capable survivalist
-Rouge							
+Rogue
 Cha,Str,Dex
 Dagger, hand Crossbow, shuriken, sling, short sword
 cloth, leather

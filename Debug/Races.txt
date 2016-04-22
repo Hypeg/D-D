@@ -1,0 +1,80 @@
+Dragonborn
+6'2 to 6'8
+220 to 320
+Str +2, Con +2
+Medium
+6 Squares
+Normal
+Draconic, Common
+History +2, Intimidate +2
+Dragonborn Fury, Draconic Heritage, Dragon Breath (Power)
+Dwarf
+4'3 to 4'9
+160 to 220
+Con +2, Wis +2
+Medium
+5 Squares
+Low-light
+Dwarven,Common
+Dungeoneering +2, Endurance +2
+Cast-Iron Stomach, Dwarven Resilience,  Dwarven Weapon Proficiency, Encumbered Speed,  Stand Your Ground
+Eladrin 
+5'5 to 6'1
+130 to 180 
+Dex +2, Int +2
+Medium
+6 Squares
+Low-light
+Elven,Common
+Arcana +2, History +2
+Eladrin Education, Eladrin Weapon Proficiency,  Eladrin Will, Fey Origin, Trance, Fey Step (Power)
+Elf
+5'4 to 6'0
+130 to 170
+Dex +2, Wis +2
+Medium
+7 Squares
+Low-light
+Elven,Common
+Nature +2, Perception +2
+Elven Weapon Proficiency, Fey Origin, Group awareness, Wild Step, Elven Accuracy (Power)
+Half-Elf
+5'5 to 6'2
+130 to 190
+Con +2, Cha +2
+Medium
+6 Squares
+Low-light
+Elven, Common, Choice of one other
+Diplomacy +2, Insight +2
+Dilettante (Power), Dual Heritage, Group Diplomacy
+Halfling
+3'10 to 4'2
+75 to 85
+Dex +2, Cha +2
+Small
+6 Squares
+Normal
+Common,Choice for another	
+Acrobatics +2, Thievery +2
+Bold, Nimble Reaction, Second Chance (Power)
+Human
+5'6 to 6'2
+135 to 220	
+Ability of choice +1
+Medium
+6 Squares
+Normal
+Common,Choice of one other
+N/A
+Bonus At-Will Power, Bonus Feat, Bonus Skill, Human Defense Bonuses
+Tiefling
+5'6 to 6'2
+140 to 230
+Int +2, Cha +2
+Medium	
+6 Squares	
+Low-light	
+Common, Choice of one other	
+Bluff +2, Stealth +2	
+Bloodhunt, Fire Resistance, Infernal Wrath (Power)

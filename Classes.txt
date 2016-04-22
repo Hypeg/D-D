@@ -42,7 +42,7 @@ dungeoneering or nature
 Choose four of the class skills: Acrobatics(Dex),Athletics(Str),Dungeoneering(wis),Heal(wis),Endurance(Con),Nature(Wis),Perception(Wis),Stealth(Dex)
 Fighting Style,Hunter’s Quarry,Prime shot
 A strong and capable survivalist
-Rouge							
+Rogue
 Cha,Str,Dex
 Dagger, hand Crossbow, shuriken, sling, short sword
 cloth, leather

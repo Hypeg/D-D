@@ -1,0 +1,52 @@
+  Project1.MyForm.resources - Embedded, ContainedInManifestFile, 
+ImageRuntimeVersion: v4.0.30319
+Assembly D-D, Version=0.0.*, Culture=Invariant Language (Invariant Country): 
+	hash=SHA1, flags=PublicKey
+Assembly mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a: 
+	hash=None, flags=None
+Assembly System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Class DnDGUI.MyForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    System.Windows.Forms.ComboBox classDropDown : Public
+    System.Windows.Forms.ComboBox raceDropDown : Public
+    System.Windows.Forms.Label label3 : Public
+    System.Windows.Forms.Label label2 : Public
+    System.Windows.Forms.TextBox nameTextBox : Public
+    System.Windows.Forms.Label label1 : Public
+    System.Windows.Forms.Label sizeBox : Public
+    System.Windows.Forms.TextBox ageTextBox : Public
+    System.Windows.Forms.Label ageBox : Public
+    System.Windows.Forms.ComboBox comboBox4 : Public
+    System.Windows.Forms.ComboBox comboBox3 : Public
+    System.Windows.Forms.ComboBox comboBox2 : Public
+    System.Windows.Forms.TextBox textBox1 : Public
+    System.Windows.Forms.Label dietyBox : Public
+    System.Windows.Forms.Label genderBox : Public
+    System.Windows.Forms.Label alignmentDropDown : Public
+    System.Windows.Forms.Label weightDropDown : Public
+    System.Windows.Forms.Label heightDropDown : Public
+    System.Windows.Forms.TextBox speedTextBox : Public
+    System.Windows.Forms.Label speedBox : Public
+    System.Windows.Forms.Label label12 : Public
+    System.Windows.Forms.Label label13 : Public
+    System.Windows.Forms.PictureBox pictureBox : Public
+    System.Windows.Forms.RichTextBox definitionTextBox : Public
+    System.Windows.Forms.Label label38 : Public
+    System.Windows.Forms.TextBox textBox2 : Public
+    System.Windows.Forms.ComboBox comboBox1 : Public
+    System.Windows.Forms.TextBox textBox3 : Public
+    System.Windows.Forms.TextBox textBox4 : Public
+    System.Windows.Forms.ComboBox featsDropDown : Public
+    System.Windows.Forms.RichTextBox richTextBox2 : Public
+    System.Windows.Forms.Label label39 : Public

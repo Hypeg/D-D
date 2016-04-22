@@ -7,47 +7,56 @@
 #include <fstream>
 #include <algorithm>
 
-
+static const unsigned int NUMOFCLASSES = 8;
+static const unsigned int NUMOFINFOLINES = 11;
 
 std::string features[3][88];
 std::string races[10][9];
 std::string skills[34];
-std::string classes[8][11];
+bool initized_classes = false;
+std::string classes[NUMOFCLASSES][NUMOFINFOLINES];
 std::string powers[102][7];
 
 std::ifstream featsFile, raceFile, skillFile, classFile, powerFile;
 
 std::string classs(std::string input)
 {
-	classFile.open("Classes.txt");
-	std::string line;
-	std::string output;
-	for (int x = 0; x < 9; x++) {		//keeps track of which class
-		for (int y = 0; y < 11; y++) {	//places the info for each class at the y-coordinate
-			getline(classFile, line);
+	if (!initized_classes)
+	{
+		classFile.open("Classes.txt");
+		std::string line;
+		for (int current_class = 0; current_class < NUMOFCLASSES; current_class++) {		//keeps track of which class
+			for (int current_info = 0; current_info < NUMOFINFOLINES; current_info++) {	//places the info for each class at the y-coordinate
+				getline(classFile, line);
 
-			classes[y][x] = line;
+				classes[current_class][current_info] = line;
+				std::cout << line;
+			}
+		}
+		initized_classes = true;
+	}
+	int index = 0;
+	std::string input2 = input;
+	for (int y = 0; y < NUMOFCLASSES; y++) {
+		if (classes[y][0] == input2) {
+			index = y;
+			break;
 		}
 	}
-	int x = 0;
-	for (int y = 0; y < 8; y++) {
-		if (classes[0][y] == input) {
-			x = y;
-			y = 8;
-		}
-	}
-	output.append("Class: " + classes[0][x] + "\n");
-	output.append("Key Ability Score: " + classes[1][x] + "\n");
-	output.append("Weapon Proficiencies: " + classes[2][x] + "\n");
-	output.append("Armor Proficiencies: " + classes[3][x] + "\n");
-	output.append("Bonus for Defense: " + classes[4][x] + "\n");
-	output.append("Hit Points at First Level: " + classes[5][x] + "\n");
-	output.append("Healing Surges: " + classes[6][x] + "\n");
-	output.append("Deity Choice and Misc: " + classes[7][x] + "\n");
-	output.append("Trained Skills: " + classes[8][x] + "\n");
-	output.append("Class Skills: " + classes[9][x] + "\n");
-	output.append("Class Features: " + classes[10][x] + "\n");
-	output.append("Short Description: " + classes[11][x] + "\n");
+
+	std::string output;
+	output.append("Class: " + classes[index][0] + "\n");
+	output.append("Key Ability Score: " + classes[index][1] + "\n");
+	output.append("Weapon Proficiencies: " + classes[index][2] + "\n");
+	output.append("Armor Proficiencies: " + classes[index][3] + "\n");
+	output.append("Bonus for Defense: " + classes[index][4] + "\n");
+	output.append("Hit Points at First Level: " + classes[index][5] + "\n");
+	output.append("Healing Surges: " + classes[index][6] + "\n");
+	output.append("Deity Choice and Misc: " + classes[index][7] + "\n");
+	output.append("Trained Skills: " + classes[index][8] + "\n");
+	output.append("Class Skills: " + classes[index][9] + "\n");
+	output.append("Class Features: " + classes[index][10] + "\n");
+	output.append("Short Description: " + classes[index][11] + "\n");
 	classFile.close();
 	return output;
 }
