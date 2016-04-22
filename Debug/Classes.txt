@@ -85,5 +85,5 @@ con modifier + 6
 Arcana
 Choose three of the following class skills:Diplomacy(Cha),Dungeoneering(Wis),History(Int),Insight(Wis),Nature(Int),Religion(Int)
 Arcane Implement Mastery (Wand of Accuracy, Orb of Imposition, or Staff of Defense),Cantrips,Ritual Casting,Spellbook
-A Practicioner of ranged magic 
+A Practicioner of ranged magic
 

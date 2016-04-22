@@ -22,15 +22,11 @@ std::string classs(std::string input)
 	classFile.open("Classes.txt");
 	std::string line;
 	std::string output;
-	for (int x = 0; x < 9; x++) {		//keeps track of which ability in the list
-		for (int y = 0; y < 11; y++) {	//while all three spots for that ability is being written, (name, race avaiable, and effect)
-
+	for (int x = 0; x < 9; x++) {		//keeps track of which class
+		for (int y = 0; y < 11; y++) {	//places the info for each class at the y-coordinate
 			getline(classFile, line);
 
 			classes[y][x] = line;
-
-
-
 		}
 	}
 	int x = 0;
