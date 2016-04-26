@@ -398,6 +398,9 @@ private:
 
 private:
 public: System::Windows::Forms::Label^  label39;
+public: System::Windows::Forms::TextBox^  languagesTextBox;
+
+public: System::Windows::Forms::Label^  label40;
 
 	private:
 	public:
@@ -577,6 +580,8 @@ public: System::Windows::Forms::Label^  label39;
 			this->openToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->saveToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->exitToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->label40 = (gcnew System::Windows::Forms::Label());
+			this->languagesTextBox = (gcnew System::Windows::Forms::TextBox());
 			this->tabControl1->SuspendLayout();
 			this->generalPage->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox))->BeginInit();
@@ -615,6 +620,7 @@ public: System::Windows::Forms::Label^  label39;
 			this->generalPage->Controls->Add(this->label3);
 			this->generalPage->Controls->Add(this->label12);
 			this->generalPage->Controls->Add(this->label2);
+			this->generalPage->Controls->Add(this->languagesTextBox);
 			this->generalPage->Controls->Add(this->deityTextBox);
 			this->generalPage->Controls->Add(this->maxHPTextBox);
 			this->generalPage->Controls->Add(this->currentHPTextBox);
@@ -623,6 +629,7 @@ public: System::Windows::Forms::Label^  label39;
 			this->generalPage->Controls->Add(this->ageTextBox);
 			this->generalPage->Controls->Add(this->label39);
 			this->generalPage->Controls->Add(this->nameTextBox);
+			this->generalPage->Controls->Add(this->label40);
 			this->generalPage->Controls->Add(this->label38);
 			this->generalPage->Controls->Add(this->dietyBox);
 			this->generalPage->Controls->Add(this->genderBox);
@@ -2141,6 +2148,24 @@ public: System::Windows::Forms::Label^  label39;
 			this->exitToolStripMenuItem->Size = System::Drawing::Size(103, 22);
 			this->exitToolStripMenuItem->Text = L"Exit";
 			this->exitToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::exitToolStripMenuItem_Click);
+			// 
+			// label40
+			// 
+			this->label40->AutoSize = true;
+			this->label40->Location = System::Drawing::Point(11, 413);
+			this->label40->Name = L"label40";
+			this->label40->Size = System::Drawing::Size(60, 13);
+			this->label40->TabIndex = 0;
+			this->label40->Text = L"Languages";
+			this->label40->Click += gcnew System::EventHandler(this, &MyForm::label4_Click);
+			// 
+			// languagesTextBox
+			// 
+			this->languagesTextBox->Location = System::Drawing::Point(14, 429);
+			this->languagesTextBox->Name = L"languagesTextBox";
+			this->languagesTextBox->Size = System::Drawing::Size(123, 20);
+			this->languagesTextBox->TabIndex = 1;
+			this->languagesTextBox->TextChanged += gcnew System::EventHandler(this, &MyForm::textBox1_TextChanged);
 			// 
 			// MyForm
 			// 
