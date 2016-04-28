@@ -9,16 +9,15 @@
 
 static const unsigned int NUMOFCLASSES = 8;
 static const unsigned int NUMOFINFOLINES = 11;
+static const unsigned int NUMOFRACES = 10;
+static const unsigned int NUMOFINFOLINESRACES = 10;
 
-std::string features[3][88];
-std::string races[10][9];
-std::string skills[34];
+
 bool initized_classes = false;
+bool initized_races = false;
 std::string classes[NUMOFCLASSES][NUMOFINFOLINES]; 
-std::string powers[102][7];
-
-std::ifstream featsFile, raceFile, skillFile, classFile, powerFile;
-
+std::ifstream raceFile, classFile;
+std::string races[NUMOFRACES][NUMOFINFOLINESRACES];
 //TODO: Make a function similar to "classs" but for races
 
 std::string classs(std::string input)
@@ -58,6 +57,44 @@ std::string classs(std::string input)
 	output.append("Class Features: " + classes[index][10] + "\n");
 	classFile.close();
 	return output;
+}
+
+std::string racess(std::string input2)
+{
+	if (!initized_races)
+	{
+		raceFile.open("Races.txt");
+		std::string line;
+		for (int current_race = 0; current_race < NUMOFRACES; current_race++) {
+			for (int current_info = 0; current_info < NUMOFINFOLINESRACES; current_info++) {
+				getline(raceFile, line);
+
+				races[current_race][current_info] = line;
+			}
+		}
+		initized_races = true;
+		raceFile.close();
+	}
+	int index = 0;
+	for (int current_race = 0; current_race < NUMOFRACES; current_race++) {
+		if (races[current_race][0] == input2) {
+			index = current_race;
+			break;
+		}
+	}
+
+	std::string output2;
+	output2.append("Race: " + races[index][0] + "\n");
+	output2.append("Height: " + races[index][1] + "\n");
+	output2.append("Weight: " + races[index][2] + "\n");
+	output2.append("Ability Score: " + races[index][3] + "\n");
+	output2.append("Size: " + races[index][4] + "\n");
+	output2.append("Speed: " + races[index][5] + "\n");
+	output2.append("Vision: " + races[index][6] + "\n");
+	output2.append("Language: " + races[index][7] + "\n");
+	output2.append("Skill Bonuses: " + races[index][8] + "\n");
+	output2.append("Features: " + races[index][9] + "\n");
+	return output2;
 }
 
 int calcMod(int a)

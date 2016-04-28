@@ -53,7 +53,7 @@ stealth or theivery
 Choose three of the class skills: Acrobatics(Dex),Athletics(Str),Bluff(Cha),Streetwise(Wis),Insight(Wis),Dungeoneering(Wis),Intimidate(Sha),Perception(Wis),Stealth(Dex)
 First Strike,Rogue Tactics,Rogue Weapon talent,Sneak attack
 A sneaky and deadly combatant
-Warlock	
+Warlock
 Chr,Con,Int
 simple melee and ranged weapons	
 cloth, leather

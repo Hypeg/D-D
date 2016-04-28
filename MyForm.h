@@ -1,6 +1,7 @@
 #pragma once
 #include <msclr\marshal_cppstd.h>
 #include "DnDUtils.h"
+#include <fstream>
 
 
 namespace DnDGUI {
@@ -346,11 +347,11 @@ public: System::Windows::Forms::TextBox^  maxHPTextBox;
 public: System::Windows::Forms::TextBox^  currentHPTextBox;
 private:
 
-	public: System::Windows::Forms::ComboBox^  featsDropDown;
+
 	private: System::Windows::Forms::Button^  statsRandomButton;
 	public:
-	private: System::Windows::Forms::RichTextBox^  richTextBox1;
-	private: System::Windows::Forms::Label^  featsLabel;
+
+
 	private: System::Windows::Forms::TextBox^  charFinalBox;
 	private: System::Windows::Forms::TextBox^  charModBox;
 
@@ -393,7 +394,9 @@ private:
 	private: System::Windows::Forms::TabPage^  powersTab;
 	private: System::Windows::Forms::Label^  label35;
 	private: System::Windows::Forms::Label^  label4;
-public: System::Windows::Forms::RichTextBox^  raceDescriptionBox;
+public: System::Windows::Forms::RichTextBox^  raceDescriptionTextBox;
+private:
+
 private:
 
 private:
@@ -401,6 +404,8 @@ public: System::Windows::Forms::Label^  label39;
 public: System::Windows::Forms::TextBox^  languagesTextBox;
 
 public: System::Windows::Forms::Label^  label40;
+private: System::Windows::Forms::Label^  label41;
+public:
 
 	private:
 	public:
@@ -428,7 +433,7 @@ public: System::Windows::Forms::Label^  label40;
 			this->tabControl1 = (gcnew System::Windows::Forms::TabControl());
 			this->generalPage = (gcnew System::Windows::Forms::TabPage());
 			this->pictureBox = (gcnew System::Windows::Forms::PictureBox());
-			this->raceDescriptionBox = (gcnew System::Windows::Forms::RichTextBox());
+			this->raceDescriptionTextBox = (gcnew System::Windows::Forms::RichTextBox());
 			this->classDescriptionTextBox = (gcnew System::Windows::Forms::RichTextBox());
 			this->alignmentComboBox = (gcnew System::Windows::Forms::ComboBox());
 			this->weightComboBox = (gcnew System::Windows::Forms::ComboBox());
@@ -440,6 +445,7 @@ public: System::Windows::Forms::Label^  label40;
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->label12 = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
+			this->languagesTextBox = (gcnew System::Windows::Forms::TextBox());
 			this->deityTextBox = (gcnew System::Windows::Forms::TextBox());
 			this->maxHPTextBox = (gcnew System::Windows::Forms::TextBox());
 			this->currentHPTextBox = (gcnew System::Windows::Forms::TextBox());
@@ -448,6 +454,7 @@ public: System::Windows::Forms::Label^  label40;
 			this->ageTextBox = (gcnew System::Windows::Forms::TextBox());
 			this->label39 = (gcnew System::Windows::Forms::Label());
 			this->nameTextBox = (gcnew System::Windows::Forms::TextBox());
+			this->label40 = (gcnew System::Windows::Forms::Label());
 			this->label38 = (gcnew System::Windows::Forms::Label());
 			this->dietyBox = (gcnew System::Windows::Forms::Label());
 			this->genderBox = (gcnew System::Windows::Forms::Label());
@@ -569,9 +576,6 @@ public: System::Windows::Forms::Label^  label40;
 			this->label20 = (gcnew System::Windows::Forms::Label());
 			this->label22 = (gcnew System::Windows::Forms::Label());
 			this->featsPage = (gcnew System::Windows::Forms::TabPage());
-			this->richTextBox1 = (gcnew System::Windows::Forms::RichTextBox());
-			this->featsLabel = (gcnew System::Windows::Forms::Label());
-			this->featsDropDown = (gcnew System::Windows::Forms::ComboBox());
 			this->powersTab = (gcnew System::Windows::Forms::TabPage());
 			this->label35 = (gcnew System::Windows::Forms::Label());
 			this->label4 = (gcnew System::Windows::Forms::Label());
@@ -580,8 +584,7 @@ public: System::Windows::Forms::Label^  label40;
 			this->openToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->saveToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->exitToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->label40 = (gcnew System::Windows::Forms::Label());
-			this->languagesTextBox = (gcnew System::Windows::Forms::TextBox());
+			this->label41 = (gcnew System::Windows::Forms::Label());
 			this->tabControl1->SuspendLayout();
 			this->generalPage->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox))->BeginInit();
@@ -608,7 +611,7 @@ public: System::Windows::Forms::Label^  label40;
 			// generalPage
 			// 
 			this->generalPage->Controls->Add(this->pictureBox);
-			this->generalPage->Controls->Add(this->raceDescriptionBox);
+			this->generalPage->Controls->Add(this->raceDescriptionTextBox);
 			this->generalPage->Controls->Add(this->classDescriptionTextBox);
 			this->generalPage->Controls->Add(this->alignmentComboBox);
 			this->generalPage->Controls->Add(this->weightComboBox);
@@ -657,14 +660,14 @@ public: System::Windows::Forms::Label^  label40;
 			this->pictureBox->TabIndex = 5;
 			this->pictureBox->TabStop = false;
 			// 
-			// raceDescriptionBox
+			// raceDescriptionTextBox
 			// 
-			this->raceDescriptionBox->Location = System::Drawing::Point(421, 183);
-			this->raceDescriptionBox->Name = L"raceDescriptionBox";
-			this->raceDescriptionBox->ReadOnly = true;
-			this->raceDescriptionBox->Size = System::Drawing::Size(226, 334);
-			this->raceDescriptionBox->TabIndex = 4;
-			this->raceDescriptionBox->Text = L"";
+			this->raceDescriptionTextBox->Location = System::Drawing::Point(421, 183);
+			this->raceDescriptionTextBox->Name = L"raceDescriptionTextBox";
+			this->raceDescriptionTextBox->ReadOnly = true;
+			this->raceDescriptionTextBox->Size = System::Drawing::Size(226, 334);
+			this->raceDescriptionTextBox->TabIndex = 4;
+			this->raceDescriptionTextBox->Text = L"";
 			// 
 			// classDescriptionTextBox
 			// 
@@ -753,7 +756,7 @@ public: System::Windows::Forms::Label^  label40;
 			this->raceDropDown->FormattingEnabled = true;
 			this->raceDropDown->Items->AddRange(gcnew cli::array< System::Object^  >(8) {
 				L"Dragonborn", L"Dwarf", L"Eladrin", L"Elf",
-					L"Half-Elf", L"Halfing", L"Human", L"Tiefling"
+					L"Half-Elf", L"Halfling", L"Human", L"Tiefling"
 			});
 			this->raceDropDown->Location = System::Drawing::Point(13, 64);
 			this->raceDropDown->Name = L"raceDropDown";
@@ -801,6 +804,14 @@ public: System::Windows::Forms::Label^  label40;
 			this->label2->Text = L"Race";
 			this->label2->Click += gcnew System::EventHandler(this, &MyForm::label2_Click);
 			// 
+			// languagesTextBox
+			// 
+			this->languagesTextBox->Location = System::Drawing::Point(14, 429);
+			this->languagesTextBox->Name = L"languagesTextBox";
+			this->languagesTextBox->Size = System::Drawing::Size(123, 20);
+			this->languagesTextBox->TabIndex = 1;
+			this->languagesTextBox->TextChanged += gcnew System::EventHandler(this, &MyForm::textBox1_TextChanged);
+			// 
 			// deityTextBox
 			// 
 			this->deityTextBox->Location = System::Drawing::Point(14, 385);
@@ -813,7 +824,6 @@ public: System::Windows::Forms::Label^  label40;
 			// 
 			this->maxHPTextBox->Location = System::Drawing::Point(179, 23);
 			this->maxHPTextBox->Name = L"maxHPTextBox";
-			this->maxHPTextBox->ReadOnly = true;
 			this->maxHPTextBox->Size = System::Drawing::Size(57, 20);
 			this->maxHPTextBox->TabIndex = 1;
 			this->maxHPTextBox->TextChanged += gcnew System::EventHandler(this, &MyForm::textBox1_TextChanged);
@@ -867,6 +877,16 @@ public: System::Windows::Forms::Label^  label40;
 			this->nameTextBox->Size = System::Drawing::Size(123, 20);
 			this->nameTextBox->TabIndex = 1;
 			this->nameTextBox->TextChanged += gcnew System::EventHandler(this, &MyForm::textBox1_TextChanged);
+			// 
+			// label40
+			// 
+			this->label40->AutoSize = true;
+			this->label40->Location = System::Drawing::Point(11, 413);
+			this->label40->Name = L"label40";
+			this->label40->Size = System::Drawing::Size(60, 13);
+			this->label40->TabIndex = 0;
+			this->label40->Text = L"Languages";
+			this->label40->Click += gcnew System::EventHandler(this, &MyForm::label4_Click);
 			// 
 			// label38
 			// 
@@ -1842,7 +1862,6 @@ public: System::Windows::Forms::Label^  label40;
 			// 
 			this->thieveryTextBox->Location = System::Drawing::Point(274, 404);
 			this->thieveryTextBox->Name = L"thieveryTextBox";
-			this->thieveryTextBox->ReadOnly = true;
 			this->thieveryTextBox->Size = System::Drawing::Size(41, 20);
 			this->thieveryTextBox->TabIndex = 20;
 			// 
@@ -1850,7 +1869,6 @@ public: System::Windows::Forms::Label^  label40;
 			// 
 			this->streetwiseTextBox->Location = System::Drawing::Point(273, 363);
 			this->streetwiseTextBox->Name = L"streetwiseTextBox";
-			this->streetwiseTextBox->ReadOnly = true;
 			this->streetwiseTextBox->Size = System::Drawing::Size(41, 20);
 			this->streetwiseTextBox->TabIndex = 20;
 			// 
@@ -1858,7 +1876,6 @@ public: System::Windows::Forms::Label^  label40;
 			// 
 			this->stealthTextBox->Location = System::Drawing::Point(273, 319);
 			this->stealthTextBox->Name = L"stealthTextBox";
-			this->stealthTextBox->ReadOnly = true;
 			this->stealthTextBox->Size = System::Drawing::Size(41, 20);
 			this->stealthTextBox->TabIndex = 20;
 			// 
@@ -1866,7 +1883,6 @@ public: System::Windows::Forms::Label^  label40;
 			// 
 			this->religionTextBox->Location = System::Drawing::Point(273, 278);
 			this->religionTextBox->Name = L"religionTextBox";
-			this->religionTextBox->ReadOnly = true;
 			this->religionTextBox->Size = System::Drawing::Size(41, 20);
 			this->religionTextBox->TabIndex = 20;
 			// 
@@ -1874,7 +1890,6 @@ public: System::Windows::Forms::Label^  label40;
 			// 
 			this->perceptionTextBox->Location = System::Drawing::Point(274, 239);
 			this->perceptionTextBox->Name = L"perceptionTextBox";
-			this->perceptionTextBox->ReadOnly = true;
 			this->perceptionTextBox->Size = System::Drawing::Size(41, 20);
 			this->perceptionTextBox->TabIndex = 20;
 			// 
@@ -1882,7 +1897,6 @@ public: System::Windows::Forms::Label^  label40;
 			// 
 			this->natureTextBox->Location = System::Drawing::Point(274, 197);
 			this->natureTextBox->Name = L"natureTextBox";
-			this->natureTextBox->ReadOnly = true;
 			this->natureTextBox->Size = System::Drawing::Size(41, 20);
 			this->natureTextBox->TabIndex = 20;
 			// 
@@ -1890,7 +1904,6 @@ public: System::Windows::Forms::Label^  label40;
 			// 
 			this->intimidateTextBox->Location = System::Drawing::Point(273, 157);
 			this->intimidateTextBox->Name = L"intimidateTextBox";
-			this->intimidateTextBox->ReadOnly = true;
 			this->intimidateTextBox->Size = System::Drawing::Size(41, 20);
 			this->intimidateTextBox->TabIndex = 20;
 			// 
@@ -1898,7 +1911,6 @@ public: System::Windows::Forms::Label^  label40;
 			// 
 			this->insightTextBox->Location = System::Drawing::Point(273, 116);
 			this->insightTextBox->Name = L"insightTextBox";
-			this->insightTextBox->ReadOnly = true;
 			this->insightTextBox->Size = System::Drawing::Size(41, 20);
 			this->insightTextBox->TabIndex = 20;
 			// 
@@ -1906,7 +1918,6 @@ public: System::Windows::Forms::Label^  label40;
 			// 
 			this->historyTextBox->Location = System::Drawing::Point(9, 446);
 			this->historyTextBox->Name = L"historyTextBox";
-			this->historyTextBox->ReadOnly = true;
 			this->historyTextBox->Size = System::Drawing::Size(41, 20);
 			this->historyTextBox->TabIndex = 20;
 			// 
@@ -1914,7 +1925,6 @@ public: System::Windows::Forms::Label^  label40;
 			// 
 			this->healTextBox->Location = System::Drawing::Point(10, 403);
 			this->healTextBox->Name = L"healTextBox";
-			this->healTextBox->ReadOnly = true;
 			this->healTextBox->Size = System::Drawing::Size(41, 20);
 			this->healTextBox->TabIndex = 20;
 			// 
@@ -1922,7 +1932,6 @@ public: System::Windows::Forms::Label^  label40;
 			// 
 			this->enduranceTextBox->Location = System::Drawing::Point(10, 364);
 			this->enduranceTextBox->Name = L"enduranceTextBox";
-			this->enduranceTextBox->ReadOnly = true;
 			this->enduranceTextBox->Size = System::Drawing::Size(41, 20);
 			this->enduranceTextBox->TabIndex = 20;
 			// 
@@ -1930,7 +1939,6 @@ public: System::Windows::Forms::Label^  label40;
 			// 
 			this->dungeoneeringTextBox->Location = System::Drawing::Point(9, 324);
 			this->dungeoneeringTextBox->Name = L"dungeoneeringTextBox";
-			this->dungeoneeringTextBox->ReadOnly = true;
 			this->dungeoneeringTextBox->Size = System::Drawing::Size(41, 20);
 			this->dungeoneeringTextBox->TabIndex = 20;
 			// 
@@ -1938,7 +1946,6 @@ public: System::Windows::Forms::Label^  label40;
 			// 
 			this->diplomacyTextBox->Location = System::Drawing::Point(9, 282);
 			this->diplomacyTextBox->Name = L"diplomacyTextBox";
-			this->diplomacyTextBox->ReadOnly = true;
 			this->diplomacyTextBox->Size = System::Drawing::Size(41, 20);
 			this->diplomacyTextBox->TabIndex = 20;
 			// 
@@ -1946,7 +1953,6 @@ public: System::Windows::Forms::Label^  label40;
 			// 
 			this->bluffTextBox->Location = System::Drawing::Point(9, 240);
 			this->bluffTextBox->Name = L"bluffTextBox";
-			this->bluffTextBox->ReadOnly = true;
 			this->bluffTextBox->Size = System::Drawing::Size(41, 20);
 			this->bluffTextBox->TabIndex = 20;
 			// 
@@ -1954,7 +1960,6 @@ public: System::Windows::Forms::Label^  label40;
 			// 
 			this->athleticsTextBox->Location = System::Drawing::Point(10, 198);
 			this->athleticsTextBox->Name = L"athleticsTextBox";
-			this->athleticsTextBox->ReadOnly = true;
 			this->athleticsTextBox->Size = System::Drawing::Size(41, 20);
 			this->athleticsTextBox->TabIndex = 20;
 			// 
@@ -1962,7 +1967,6 @@ public: System::Windows::Forms::Label^  label40;
 			// 
 			this->arcanaTextBox->Location = System::Drawing::Point(10, 157);
 			this->arcanaTextBox->Name = L"arcanaTextBox";
-			this->arcanaTextBox->ReadOnly = true;
 			this->arcanaTextBox->Size = System::Drawing::Size(41, 20);
 			this->arcanaTextBox->TabIndex = 20;
 			// 
@@ -1970,7 +1974,6 @@ public: System::Windows::Forms::Label^  label40;
 			// 
 			this->acrobaticsTextBox->Location = System::Drawing::Point(10, 117);
 			this->acrobaticsTextBox->Name = L"acrobaticsTextBox";
-			this->acrobaticsTextBox->ReadOnly = true;
 			this->acrobaticsTextBox->Size = System::Drawing::Size(41, 20);
 			this->acrobaticsTextBox->TabIndex = 20;
 			// 
@@ -2037,9 +2040,7 @@ public: System::Windows::Forms::Label^  label40;
 			// 
 			// featsPage
 			// 
-			this->featsPage->Controls->Add(this->richTextBox1);
-			this->featsPage->Controls->Add(this->featsLabel);
-			this->featsPage->Controls->Add(this->featsDropDown);
+			this->featsPage->Controls->Add(this->label41);
 			this->featsPage->Location = System::Drawing::Point(4, 22);
 			this->featsPage->Name = L"featsPage";
 			this->featsPage->Padding = System::Windows::Forms::Padding(3);
@@ -2047,37 +2048,6 @@ public: System::Windows::Forms::Label^  label40;
 			this->featsPage->TabIndex = 3;
 			this->featsPage->Text = L"Feats";
 			this->featsPage->UseVisualStyleBackColor = true;
-			// 
-			// richTextBox1
-			// 
-			this->richTextBox1->Location = System::Drawing::Point(8, 50);
-			this->richTextBox1->Name = L"richTextBox1";
-			this->richTextBox1->ReadOnly = true;
-			this->richTextBox1->Size = System::Drawing::Size(233, 96);
-			this->richTextBox1->TabIndex = 6;
-			this->richTextBox1->Text = L"";
-			// 
-			// featsLabel
-			// 
-			this->featsLabel->AutoSize = true;
-			this->featsLabel->Location = System::Drawing::Point(8, 4);
-			this->featsLabel->Name = L"featsLabel";
-			this->featsLabel->Size = System::Drawing::Size(33, 13);
-			this->featsLabel->TabIndex = 5;
-			this->featsLabel->Text = L"Feats";
-			// 
-			// featsDropDown
-			// 
-			this->featsDropDown->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
-			this->featsDropDown->FormattingEnabled = true;
-			this->featsDropDown->Items->AddRange(gcnew cli::array< System::Object^  >(8) {
-				L"Dragonborn", L"Dwarf", L"Eladrin", L"Elf",
-					L"Half-Elf", L"Halfing", L"Human", L"Tiefling"
-			});
-			this->featsDropDown->Location = System::Drawing::Point(7, 22);
-			this->featsDropDown->Name = L"featsDropDown";
-			this->featsDropDown->Size = System::Drawing::Size(121, 21);
-			this->featsDropDown->TabIndex = 4;
 			// 
 			// powersTab
 			// 
@@ -2141,6 +2111,7 @@ public: System::Windows::Forms::Label^  label40;
 			this->saveToolStripMenuItem->Name = L"saveToolStripMenuItem";
 			this->saveToolStripMenuItem->Size = System::Drawing::Size(103, 22);
 			this->saveToolStripMenuItem->Text = L"Save";
+			this->saveToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::saveToolStripMenuItem_Click);
 			// 
 			// exitToolStripMenuItem
 			// 
@@ -2149,23 +2120,16 @@ public: System::Windows::Forms::Label^  label40;
 			this->exitToolStripMenuItem->Text = L"Exit";
 			this->exitToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::exitToolStripMenuItem_Click);
 			// 
-			// label40
+			// label41
 			// 
-			this->label40->AutoSize = true;
-			this->label40->Location = System::Drawing::Point(11, 413);
-			this->label40->Name = L"label40";
-			this->label40->Size = System::Drawing::Size(60, 13);
-			this->label40->TabIndex = 0;
-			this->label40->Text = L"Languages";
-			this->label40->Click += gcnew System::EventHandler(this, &MyForm::label4_Click);
-			// 
-			// languagesTextBox
-			// 
-			this->languagesTextBox->Location = System::Drawing::Point(14, 429);
-			this->languagesTextBox->Name = L"languagesTextBox";
-			this->languagesTextBox->Size = System::Drawing::Size(123, 20);
-			this->languagesTextBox->TabIndex = 1;
-			this->languagesTextBox->TextChanged += gcnew System::EventHandler(this, &MyForm::textBox1_TextChanged);
+			this->label41->AutoSize = true;
+			this->label41->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 72, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label41->Location = System::Drawing::Point(233, 213);
+			this->label41->Name = L"label41";
+			this->label41->Size = System::Drawing::Size(189, 108);
+			this->label41->TabIndex = 1;
+			this->label41->Text = L"NO";
 			// 
 			// MyForm
 			// 
@@ -2176,7 +2140,7 @@ public: System::Windows::Forms::Label^  label40;
 			this->Controls->Add(this->menuStrip1);
 			this->MainMenuStrip = this->menuStrip1;
 			this->Name = L"MyForm";
-			this->Text = L"MyForm";
+			this->Text = L"DnD 4e Character Sheet";
 			this->tabControl1->ResumeLayout(false);
 			this->generalPage->ResumeLayout(false);
 			this->generalPage->PerformLayout();
@@ -2209,12 +2173,50 @@ public: System::Windows::Forms::Label^  label40;
 	}
 	private: System::Void saveToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
 		// TODO: Save button.
-		//write code to prompt user to select where to save file and enter the name of the file
-		//fetch ALL THE STRINGS
-		std::string testString = context.marshal_as<std::string>(nameTextBox->Text); //example... note you will only have to change "nameTextBox" for each fetched string
+		std::ofstream myFile;
+		myFile.open("output.txt");
+		myFile << "Name: "<< context.marshal_as<std::string>(nameTextBox->Text)<< std::endl; //example... note you will only have to change "nameTextBox" for each fetched string
+		myFile << "Race: " << context.marshal_as<std::string>(raceDropDown->Text) << std::endl;
+		myFile << "Class: " << context.marshal_as<std::string>(classDropDown->Text) << std::endl;
+		myFile << "Size: " << context.marshal_as<std::string>(sizeBox->Text) << std::endl;
+		myFile << "Age: " << context.marshal_as<std::string>(ageBox->Text) << std::endl;
+		myFile << "Gender: " << context.marshal_as<std::string>(genderComboBox->Text) << std::endl;
+		myFile << "Height: " << context.marshal_as<std::string>(heightComboBox->Text) << std::endl;
+		myFile << "Weight: " << context.marshal_as<std::string>(weightComboBox->Text) << std::endl;
+		myFile << "Alignment: " << context.marshal_as<std::string>(alignmentComboBox->Text) << std::endl;
+		myFile << "Deity: " << context.marshal_as<std::string>(deityTextBox->Text) << std::endl;
+		myFile << "Languages: " << context.marshal_as<std::string>(languagesTextBox->Text) << std::endl;
+		myFile << "Max HP: " << context.marshal_as<std::string>(maxHPTextBox->Text) << std::endl;
+		myFile << "Current HP: " << context.marshal_as<std::string>(currentHPTextBox->Text) << std::endl;
+		myFile << "Speed: " << context.marshal_as<std::string>(speedTextBox->Text) << std::endl;
+		myFile << "Strength: " << context.marshal_as<std::string>(strFinalBox->Text) << std::endl;
+		myFile << "Constitution: " << context.marshal_as<std::string>(constFinalBox->Text) << std::endl;
+		myFile << "Dexterity: " << context.marshal_as<std::string>(dexFinalBox->Text) << std::endl;
+		myFile << "Intelligence: " << context.marshal_as<std::string>(intelFinalBox->Text) << std::endl;
+		myFile << "Wisdom: " << context.marshal_as<std::string>(wisFinalBox->Text) << std::endl;
+		myFile << "Charisma: " << context.marshal_as<std::string>(charFinalBox->Text) << std::endl;
+		myFile << "Acrobatics: " << context.marshal_as<std::string>(acrobaticsTextBox->Text) << std::endl;
+		myFile << "Arcana: " << context.marshal_as<std::string>(arcanaTextBox->Text) << std::endl;
+		myFile << "Athletics: " << context.marshal_as<std::string>(athleticsTextBox->Text) << std::endl;
+		myFile << "Bluff: " << context.marshal_as<std::string>(bluffTextBox->Text) << std::endl;
+		myFile << "Diplomacy: " << context.marshal_as<std::string>(diplomacyTextBox->Text) << std::endl;
+		myFile << "Dungeoneering: " << context.marshal_as<std::string>(dungeoneeringTextBox->Text) << std::endl;
+		myFile << "Endurance: " << context.marshal_as<std::string>(enduranceTextBox->Text) << std::endl;
+		myFile << "Heal: " << context.marshal_as<std::string>(healTextBox->Text) << std::endl;
+		myFile << "History: " << context.marshal_as<std::string>(historyTextBox->Text) << std::endl;
+		myFile << "Insight: " << context.marshal_as<std::string>(insightTextBox->Text) << std::endl;
+		myFile << "Intimidate: " << context.marshal_as<std::string>(intimidateTextBox->Text) << std::endl;
+		myFile << "Nature: " << context.marshal_as<std::string>(natureTextBox->Text) << std::endl;
+		myFile << "Perception: " << context.marshal_as<std::string>(perceptionTextBox->Text) << std::endl;
+		myFile << "Religion: " << context.marshal_as<std::string>(religionTextBox->Text) << std::endl;
+		myFile << "Stealth: " << context.marshal_as<std::string>(stealthTextBox->Text) << std::endl;
+		myFile << "Streetwise: " << context.marshal_as<std::string>(streetwiseTextBox->Text) << std::endl;
+		myFile << "Thievery: " << context.marshal_as<std::string>(thieveryTextBox->Text) << std::endl;
 		//can probably just use a method similar to classs and racess to append it all to one string, and then output to file
+		myFile.close();
 	}
 	private: System::Void raceDropDown_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e) {
+		raceDescriptionTextBox->Text = context.marshal_as<System::String ^>(racess(context.marshal_as<std::string>(raceDropDown->Text)));
 	}
 	private: System::Void label3_Click(System::Object^  sender, System::EventArgs^  e) {
 	}

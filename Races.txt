@@ -18,7 +18,7 @@ Low-light
 Dwarven,Common
 Dungeoneering +2, Endurance +2
 Cast-Iron Stomach, Dwarven Resilience,  Dwarven Weapon Proficiency, Encumbered Speed,  Stand Your Ground
-Eladrin 
+Eladrin
 5'5 to 6'1
 130 to 180 
 Dex +2, Int +2
