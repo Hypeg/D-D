@@ -753,7 +753,7 @@ public: System::Windows::Forms::Label^  label40;
 			this->raceDropDown->FormattingEnabled = true;
 			this->raceDropDown->Items->AddRange(gcnew cli::array< System::Object^  >(8) {
 				L"Dragonborn", L"Dwarf", L"Eladrin", L"Elf",
-					L"Half-Elf", L"Halfling", L"Human", L"Tiefling"
+					L"Half-Elf", L"Halfing", L"Human", L"Tiefling"
 			});
 			this->raceDropDown->Location = System::Drawing::Point(13, 64);
 			this->raceDropDown->Name = L"raceDropDown";
@@ -2207,8 +2207,14 @@ public: System::Windows::Forms::Label^  label40;
 		//and then turns the returned std string into a managed string and puts it in the classDescriptionBox
 		classDescriptionTextBox->Text = context.marshal_as<System::String ^>(classs(context.marshal_as<std::string>(classDropDown->Text)));
 	}
+	private: System::Void saveToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
+		// TODO: Save button.
+		//write code to prompt user to select where to save file and enter the name of the file
+		//fetch ALL THE STRINGS
+		std::string testString = context.marshal_as<std::string>(nameTextBox->Text); //example... note you will only have to change "nameTextBox" for each fetched string
+		//can probably just use a method similar to classs and racess to append it all to one string, and then output to file
+	}
 	private: System::Void raceDropDown_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e) {
-		raceDescriptionBox->Text = context.marshal_as<System::String ^>(racess(context.marshal_as<std::string>(raceDropDown->Text)));
 	}
 	private: System::Void label3_Click(System::Object^  sender, System::EventArgs^  e) {
 	}
@@ -2230,13 +2236,6 @@ public: System::Windows::Forms::Label^  label40;
 	}
 	private: System::Void exitToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
 		Application::Exit();
-	}
-	private: System::Void saveToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^e) {
-		// TODO: Save button.
-		//write code to prompt user to select where to save file and enter the name of the file
-		//fetch ALL THE STRINGS
-		std::string testString = context.marshal_as<std::string>(nameTextBox->Text); //example... note you will only have to change "nameTextBox" for each fetched string
-		//can probably just use a method similar to classs and racess to append it all to one string, and then output to file
 	}
 	private: System::Void strengthDropDown_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e) {
 	}
@@ -2291,4 +2290,3 @@ public: System::Windows::Forms::Label^  label40;
 	}
 	};
 }
-
