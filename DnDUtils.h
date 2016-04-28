@@ -6,7 +6,6 @@
 #include <string>
 #include <fstream>
 #include <algorithm>
-#include <MyForm.h>
 
 static const unsigned int NUMOFCLASSES = 8;
 static const unsigned int NUMOFINFOLINES = 11;
@@ -116,14 +115,4 @@ int calcMod(int a)
 		return 4;
 	else if (a == 20 || a == 21)
 		return 5;
-}
-
-void saveFile()
-{
-	//write code to prompt user to select where to save file and enter the name of the file
-
-	//fetch ALL THE STRINGS
-	std::string testString = context.marshal_as<std::string>(form.nameTextBox->Text); //example... note you will only have to change "nameTextBox" for each fetched string
-	//can probably just use a method similar to classs and racess to append it all to one string, and then output to file
-	//make sure the file is closed
 }
